@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 A8</title>
+</head>
+<body>
+    <h1>Ejercicio 3</h1>
+    <script>
+        let valor = parseInt(prompt("Introduzca el valor"));
+        let digito = 0;
+
+        if (valor>=0 && valor<=9) {
+            digito+=1;
+            document.write("El numero tiene "+digito+" digito")
+        } else if (valor>=10 && valor <=99) {
+            digito+=2;
+            document.write("El número tiene "+digito+" digitos");
+        } else if (valor>=100 && valor<=999) {
+            digito+=3;
+            document.write("El número tiene "+digito+" digitos")
+        } else{
+            document.write("El número tiene mas de 3 digitos");
+        }
+    </script>
+</body>
+</html>

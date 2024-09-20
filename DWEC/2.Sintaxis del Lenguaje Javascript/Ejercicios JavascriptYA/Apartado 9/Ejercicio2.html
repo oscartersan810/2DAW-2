@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 A9</title>
+</head>
+<body>
+    <h1>Ejercicio 2</h1>
+    <script>
+        let v1 = parseInt(prompt("Introduzca primer valor"));
+        let v2 = parseInt(prompt("Introduzca segundo valor"));
+        let v3 = parseInt(prompt("Introduzca tercer valor"));
+
+        let calculo;
+        if ((v1==v2 && v1==v3) &&(v2==v1 && v2==v3) && (v3==v1 && v3==v2)) {
+            calculo = (v1+v2) * v3;
+            document.write("Valor 1: "+v1);
+            document.write("<br>");
+            document.write("Valor 2: "+v2);
+            document.write("<br>");
+            document.write("Valor 3: "+v3);
+            document.write("<br>");
+            document.write("El resultado del cálculo de los 3 valores es: "+calculo);
+            document.write("<br>");
+        } else{
+            document.write("Los valores NO son iguales");
+        }
+    </script>
+</body>
+</html>

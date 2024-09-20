@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 A6 Mejora</title>
+</head>
+<body>
+    <script>
+        let cantidadNotas = parseInt(prompt("¿Cuántas notas deseas introducir?"));
+        let nota;
+        let contador;
+
+        for (let i = 0; i < cantidadNotas; i++) {
+            nota = parseFloat(prompt("Introduzca la nota "(i+1)));
+            
+        }
+        // let nota1 = parseInt(prompt("Introduzca la primera nota"));
+        // let nota2= parseInt(prompt("Introduzca la segunda nota"));
+        // let nota3 = parseInt(prompt("Introduzca la tercera nota"));
+
+        let suma = (nota1+nota2+nota3);
+        let promedio = (suma/3);
+
+        if (promedio>=7) {
+            document.write("Promocionado");
+        } else {
+            document.write("No promocionado");
+        }
+    </script>
+</body>
+</html>
