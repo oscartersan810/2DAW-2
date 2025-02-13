@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+  </head>
+  <body>
+    <h1>Ejercicio 1</h1>
+    <p>
+      Confeccionar una página que contenga una lista de tipo (ul) y definir tres
+      marcas de tipo (li) sin texto. Luego al presionar un botón agregar un nodo
+      de texto a cada marca (li).
+    </p>
+    <ul>
+        <li id="elemento1"></li>
+        <li id="elemento2"></li>
+        <li id="elemento3"></li>
+    </ul>
+    <form>
+      <input type="button" value="Rellenar Lista" onclick="rellenarLista()" />
+    </form>
+    <script>
+      function rellenarLista() {
+        let palabra1 = document.createTextNode('Nuevo elemento 1');
+        let e1 = document.getElementById('elemento1');
+        e1.appendChild(palabra1);
+
+        let palabra2 = document.createTextNode('Nuevo elemento 2');
+        let e2 = document.getElementById('elemento2');
+        e2.appendChild(palabra2);
+
+        let palabra3 = document.createTextNode('Nuevo elemento 3');
+        let e3 = document.getElementById('elemento3');
+        e3.appendChild(palabra3);
+      }
+    </script>
+  </body>
+</html>

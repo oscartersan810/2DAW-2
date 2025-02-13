@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+  </head>
+  <body>
+    <h1>Ejercicio 1</h1>
+    <p>
+      Disponer dos enlaces a distintos sitios. Recuperar la propiedad href del
+      primer enlace y fijar el segundo enlace con dicho valor.
+    </p>
+    <a id="enlace1" href="http://www.google.es">Google</a><br>
+    <a id="enlace2" href="http://www.marca.es">Marca</a><br>
+    <input type="button" value="Recuperar href del primer enlace y copiar al segundo" onclick="recuperaAtributo()">
+    <script>
+        function recuperaAtributo() {
+            let p1 = document.getElementById('enlace1');
+            let p2 = document.getElementById('enlace2');
+            p2.setAttribute('href',p1.getAttribute('href'));
+        }
+    </script>
+  </body>
+</html>

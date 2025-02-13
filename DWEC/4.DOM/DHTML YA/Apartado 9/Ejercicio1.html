@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+  </head>
+  <body>
+    <h1>Ejercicio 1</h1>
+    <h3>
+      Confeccionar una página que fije el color rojo a todos los párrafos.
+    </h3>
+
+    <p>Esto es el párrafo 1</p>
+    <p>Esto es el párrafo 2</p>
+    <p>Esto es el párrafo 3</p>
+    <p>Esto es el párrafo 4</p>
+    <p>Esto es el párrafo 5</p>
+    <p>Esto es el párrafo 6</p>
+    <br /><br />
+
+    <form>
+      <input
+        type="button"
+        value="Color de Fondo a los párrafos"
+        onclick="fondoColor()"
+      />
+    </form>
+
+    <script>
+      function fondoColor() {
+        let parrafo = document.getElementsByTagName("p");
+
+        for (let i = 0; i < parrafo.length; i++) {
+            parrafo[i].style.backgroundColor = 'orange';
+        }
+      }
+    </script>
+  </body>
+</html>

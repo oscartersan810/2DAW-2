@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpresionesRegulares</title>
+</head>
+<body>
+    <script>
+        let numeroTelefono = /^(\+\d{1,3})?(6|7)\d{8}$/;
+        let horas = /^([0-1]\d|2[0-3])/;
+        let minutos = 0;
+        let horaCompleta = /^(([0-1]\d|2[0-3]):([0-5]\d):([0-5]\d))$/;
+        let dni = /^[0-9]{8}[T|R|W|A|G|M|Y|F|P|D|X|B|N|J|Z|S|Q|V|H|L|C|K|E]$/;
+        let fecha = /^(\d{2}(\/|-)\d{2}\2\d{4})$/;
+        let direccionFisica = /^[0-9A-F]{2}(:|-)$/;
+        let mesAño = /^(0?[1-9]|1[0-2])/; //Mes del año
+
+        let frase = "En el Ruiz Gijón se imparte 'DAW', 'SMR' y la 'ESO'";
+        let arrayMatch = frase.match(/'.+?'/g);
+    </script>
+</body>
+</html>

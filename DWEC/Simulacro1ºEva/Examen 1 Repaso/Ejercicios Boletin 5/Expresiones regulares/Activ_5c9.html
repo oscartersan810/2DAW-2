@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividad 5c9</title>
+  <script>
+    function extraeExpresionesMatematicas(texto) {
+      // Expresión regular para extraer expresiones matemáticas entre llaves
+      let regex = /{([^{}]+)}/g;
+      let expresiones = [];
+      
+      // Búsqueda de coincidencias en el texto
+      let match;
+      while ((match = regex.exec(texto)) !== null) {
+        expresiones.push(match[1].trim());
+      }
+
+      return expresiones;
+    }
+
+    // Testeo de la función
+    let textoPrueba = "La ecuación de una recta es {y=a*x + b}, la de un círculo {x^2+y^2 = r} y la de la parábola {y = x^2}";
+    console.log(extraeExpresionesMatematicas(textoPrueba));
+  </script>
+</head>
+<body>
+  <h1>Actividad 5c9</h1>
+  <p>Crea una función llamada extraeExpresionesMatemáticas que use como argumento de entrada un string que contendrá entre llaves expresiones matemáticas. La función debe devolver un array que contenga las expresiones matemáticas.
+    Por ejemplo, si le pasamos a la función la siguiente cadena de caracteres:
+    “La ecuación de una recta es {y=a*x + b}, la de un círculo {x^2+y^2 = r} y la de la parábola {y = x^2}” 
+    la función debe devolver el array: [{y=a*x + b}, {x^2+y^2 = r}, {y = x^2}]
+    </p>
+</body>
+</html>

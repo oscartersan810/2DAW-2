@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5c6</title>
+</head>
+<body>
+    <h1>Comprueba Hora</h1>
+    <p>Pulsa f12 para ver la consola de depuración</p>
+    <script>
+        function validaHora(hora) {
+            let patron = /^(([0-1]\d|2[0-3]):([0-5]\d):([0-5]\d))$/;
+
+            if (patron.test(hora)) {
+                return hora+ " es una hora correcta";
+
+            }else{
+                return hora+ " no es una hora correcta";
+            }
+        }
+
+        console.log(validaHora("19:04:03"));
+        console.log(validaHora("23:59:00"));
+        console.log(validaHora("25:13:22"));
+        console.log(validaHora("03:12:22"));
+
+    </script>
+</body>
+</html>

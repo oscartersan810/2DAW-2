@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5a3</title>
+</head>
+<body>
+    <form action="" method="get">
+        <label for="Localidad">Localidad: </label>
+        <select name="pueblos" id="pueblos">
+            <option value="Utrera" selected>Utrera</option>
+            <option value="Los Palacios">Los Palacios</option>
+            <option value="Dos Hermanas">Dos Hermanas</option>
+        </select><br><br>
+    </form>
+    <div id="contenido">
+        
+    </div>
+
+    <script>
+        function inciar() {
+            document.querySelector('#pueblos').addEventListener('change', localidades);
+        }
+
+        function localidades(ev) {
+            let control = ev.target;
+            let contenido = document.getElementById('contenido');
+            let parrafo = document.querySelector('p');
+
+            if (!parrafo) {
+                parrafo = document.createElement('p');
+                contenido.appendChild(parrafo);
+            }
+            
+            parrafo.textContent = "Localidad seleccionada: "+control.value;            
+        }
+
+        addEventListener('load', inciar);
+    </script>
+</body>
+</html>

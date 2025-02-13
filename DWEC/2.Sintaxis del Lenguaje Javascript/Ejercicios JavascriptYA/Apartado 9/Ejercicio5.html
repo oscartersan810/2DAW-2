@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5 A9</title>
+</head>
+<body>
+    <h1>Ejercicio 5</h1>
+    <script>
+        let sueldo = parseInt(prompt("Introduzca el sueldo"));
+        let antiguedad = parseInt(prompt("Años de Antigüedad"));
+
+        if (sueldo<500 && antiguedad>=10) {
+            document.write("Tu sueldo introducido: "+sueldo);
+            document.write("<br>");
+            document.write("Tus Años de antigüedad: "+antiguedad);
+            document.write("<br>");
+            document.write("El total de tu sueldo aumento 20%: "+(sueldo*0.20));
+        } else if (sueldo<500 && antiguedad<10) {
+            document.write("Tu sueldo introducido:"+sueldo);
+            document.write("<br>");
+            document.write("Tus Años de antigüedad: "+antiguedad);
+            document.write("<br>");
+            document.write("El total de tu sueldo aumento 5%: "+(sueldo*0.05));
+        } else { //Si el sueldo es mayo o igual a 500
+            document.write("Tu sueldo "+sueldo);
+            document.write("<br>");
+            document.write("Tus Años de antigüedad: "+antiguedad);
+            document.write("<br>");
+            document.write("El total de tu sueldo: "+sueldo);
+        }
+    </script>
+</body>
+</html>

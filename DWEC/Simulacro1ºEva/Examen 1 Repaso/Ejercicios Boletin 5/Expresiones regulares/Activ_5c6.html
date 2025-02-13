@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 5c6</title>
+    <script>
+      function validaHora(hora) {
+        let regex = /^([01]\d|2[0-3]):[0-5]\d:[0-5]\d$/;
+        return regex.test(hora);
+      }
+      
+      // Testeo de la función
+      console.log(validaHora("12:45:30")); // true
+      console.log(validaHora("23:59:59")); // true
+      console.log(validaHora("08:15:00")); // true
+      console.log(validaHora("25:30:45")); // false (hora inválida)
+      console.log(validaHora("abc")); // false (no es una hora)
+      console.log(validaHora("15:30")); // false (formato incompleto)
+    </script>
+  </head>
+  <body>
+    <h1>Actividad 5c6</h1>
+    <p>
+      Crea una función llamada validaHora que valide si un string que representa
+      una hora con el formato hh:mm:ss usando la representación de 24 horas. Haz
+      un testeo de la función.
+    </p>
+  </body>
+</html>

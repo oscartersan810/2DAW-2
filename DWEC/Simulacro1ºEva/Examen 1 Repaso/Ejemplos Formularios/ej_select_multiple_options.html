@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <select id="opciones" name="opciones" multiple>
+            <option value="valor1">Primer valor</option>
+            <option value="valor2">Segundo valor</option>
+            <option value="valor3">Tercer valor</option>
+            <option value="valor4">Cuarto valor</option>
+        </select>
+    </form>
+    <br>
+    <input type="button" id="boton1" value="Rescatar valores seleccionados">
+    <script>
+        function iniciar() {
+            document.getElementById("boton1").addEventListener('click', rescatarValores);
+        }
+
+        function rescatarValores() {
+            let ctrlselect = document.getElementById('opciones');
+            let valoresSeleccionados = getSelectValues(ctrlselect);
+            alert(valoresSeleccionados)
+        }
+
+        // Return an array of the selected opion values
+        // select is an HTML select element
+        function getSelectValues(select) {
+            let result = [];
+            let options = select.options;
+            let opt;
+            for (let i = 0; i < options.length; i++) {
+                opt = options[i];
+                if (opt.selected) {
+                    result.push(opt.value);
+                }
+            }
+            return result;
+        }
+        addEventListener('load', iniciar);
+    </script>
+</body>
+
+</html>

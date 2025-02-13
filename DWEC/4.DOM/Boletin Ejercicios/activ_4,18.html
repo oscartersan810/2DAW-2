@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activ 4.16</title>
+  </head>
+  <body>
+    <h3>Cambiar visibilidad del texto</h3>
+    <div id="parrafos">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum illo id
+        temporibus eligendi sapiente quasi dicta officiis sed tempora architecto
+        non ex, perferendis modi, neque nisi, ullam praesentium aut. Temporibus.
+      </p>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores
+        similique impedit saepe omnis aperiam. Sed expedita maiores tempore
+        deleniti qui ipsum porro libero voluptatem quis iusto! Ipsam nobis quis
+        numquam.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam sapiente
+        sunt esse repudiandae fuga deserunt veniam dolores labore cum, corrupti
+        molestiae quia? Voluptas, quaerat aspernatur. Iusto asperiores placeat
+        voluptatibus tenetur!
+      </p>
+    </div>
+    <form action="" method="post">
+        <label for="seleccion">Seleccionar tamaño: </label>
+        <select name="display" id="display">
+            <option value="inline" selected>inline</option>
+            <option value="none">none</option>
+        </select>
+        <input type="button" value="Cambiar" onclick="visibilidadParrafo()">
+    </form>
+
+    <script>
+        function visibilidadParrafo() {
+            let miDiv = document.getElementById("parrafos");
+            let seleccionado = document.getElementById("display").value;
+            let parrafos = miDiv.children;
+
+            for (let i = 0; i < parrafos.length; i++) {
+                if (seleccionado == "inline") {
+                    parrafos[i].style.display = 'inline';
+                }
+                if (seleccionado == "none") {
+                    parrafos[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+  </body>
+</html>

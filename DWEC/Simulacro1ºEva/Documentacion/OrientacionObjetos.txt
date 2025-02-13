@@ -1,0 +1,66 @@
+43. Creación de Objetos literales
+En ES5 podemos crear objetos (Objects) que están constituidos por propiedades y métodos. Para crear nuevos objetos usaremos la notación literal de objeto:
+
+ let persona = {
+                         nombre: "Pedro",
+                          edad: 30,
+                          cumplirAños: function(){
+                               this.edad++
+                            }
+                         }
+Nota:  nombre y edad serían propiedades del objeto y cumplirAños() sería un método del mismo. Fíjate también que para acceder a las propiedades del objeto dentro de un método es necesario usar this (ejemplo: this.edad).
+
+Veamos otro ejemplo de un objeto alumno con las propiedad nombre, fechaNac y notas y el método toString():
+let alumno = {
+	nombre: "Juan",
+	fechaNac: new Date(2001,2,15),
+	notas: [6.7, 7.2, 8.9, 5.1],
+	toString: function(){
+		return `Me llamo ${this.nombre}, nací el ${this.fechaNac.toLocaleDateString()} y mis notas son: ${this.notas.toString()}`
+	}
+}
+
+Ejemplo de clase Persona con los siguientes miembros:
+
+Propiedad _nombre
+Propiedad _edad
+Método de instancia cumplirAños()
+Método de instancia toString()
+Getter nombre
+Setter edad
+
+class Persona {
+
+  constructor(nombre,edad){
+        this._nombre = nombre;
+        this._edad= edad;
+}
+
+  cumplirAños(){
+        this._edad++;
+  }
+
+get edad(){
+       return this._edad;
+}
+
+set edad(años) {
+       if(años>=0) this._edad = años;
+}
+
+ toString(){
+      return `${this._nombre} , ${this._edad} años`;
+ }
+
+}
+
+
+
+Posteriormente tenemos que crear instancias a partir de la clase Persona:
+
+const persona1 = new Persona ("Javier", 51);
+const persona2 = new Persona ("Lidia", 28);
+persona1.cumplirAños(); // persona1 ahora tendrá 52 años
+console.log(persona1.edad); // Muestra por pantalla los años de persona1
+console.log(persona2.toString()); // Muestra por consola el nombre y edad de persona2
+persona2.edad = 30; // Modificamos la edad de la persona

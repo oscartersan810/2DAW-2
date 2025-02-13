@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 5a2</title>
+  </head>
+  <body>
+    <h1>Actividad 5a2</h1>
+    <p>
+      Crea un cuadro de texto de manera que conforme escribamos en dicho control
+      se muestre en tiempo real el contenido en un párrafo que ponga el mensaje
+      “Hola” más el texto del cuadro de texto.
+    </p>
+    <label for="cuadroTexto">Cuadro de Texto:</label>
+    <input type="text" id="cuadroTexto" />
+
+    <p id="mensaje">Hola</p>
+
+    <script>
+      // Obtener referencia al cuadro de texto y al párrafo
+      let cuadroTexto = document.getElementById("cuadroTexto");
+      let mensajeParrafo = document.getElementById("mensaje");
+
+      // Asignar el evento de entrada al cuadro de texto
+      cuadroTexto.addEventListener("input", function () {
+        // Actualizar el contenido del párrafo en tiempo real
+        mensajeParrafo.textContent = "Hola " + cuadroTexto.value;
+      });
+    </script>
+  </body>
+</html>

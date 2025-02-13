@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+  </head>
+  <body>
+    <h1>Ejercicio 1</h1>
+    <p>
+      Disponer un div con tres párrafos. Ingresar en un control de tipo text un
+      valor entero entre 0 y 2. Luego borrar el párrafo que coincida con el
+      valor ingresado (el valor ingresado representa la posición del nodo
+      elemento a borrar).
+    </p>
+
+    <div id="pfo">
+        <p>Párrafo 1</p>
+        <p>Párrafo 2</p>
+        <p>Párrafo 3</p>
+        <br><br>
+    </div>
+    <form>
+        <input type="number" name="control" id="control">
+        <input type="button" value="Elimina Párrafos" onclick="eliminaParrafo()">
+    </form>
+    <script>
+        function eliminaParrafo() {
+        let elemento = document.getElementById('pfo');
+        let control = document.getElementById('control').value;
+        
+        if (control >= 0 && control < elemento.children.length) {
+            elemento.removeChild(elemento.children[control]);
+        } else {
+            alert("Ingrese un valor válido entre 0 y " + (elemento.children.length - 1));
+        }
+    }
+    </script>
+  </body>
+</html>

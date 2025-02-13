@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5b1</title>
+</head>
+<body>
+    <h1>Alta Paciente</h1>
+    <form action="procesa.php" method="post">
+        <label for="Nombre">Nombre(*): </label>
+        <input type="text" name="nombre" id="nombre" maxlength="30" size="30" required><br><br>
+        <label for="Sexo">Sexo(*): </label>
+        <input type="radio" name="sexo" id="sexo" value="Hombre">
+        <label for="Hombre">Hombre</label>
+        <input type="radio" name="sexo" id="sexo" value="Mujer">
+        <label for="Mujer">Mujer</label><br><br>
+        <label for="Altura">Altura(*): </label>
+        <input type="number" name="altura" id="altura" min="50" max="210" placeholder="cm" required><br><br>
+        <label for="FecNac">Fecha Nacimiento(*): </label>
+        <input type="date" name="fecnac" id="fecnac" required><br><br>
+        <label for="Cita">Semana Preferente: </label>
+        <input type="week" name="cita" id="cita"><br><br>
+        <label for="Fumador">Fumador: </label>
+        <input type="checkbox" name="fumador" id="fumador" onchange="esFumador()">
+        <label for="Numero Cigarros">Nº cigarrillos: </label>
+        <select name="cantidadCigarros" id="cantidadCigarros" required disabled>
+            <option value="1-5">1-5</option>
+            <option value="6-10">6-10</option>
+            <option value="Más de 10">Más de 10</option>
+        </select><br><br>
+        <label for="Observaciones">Observaciones: </label><br>
+        <textarea name="observacion" id="observacion" placeholder="Escribe aqui tu observación"></textarea><br><br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar">
+    </form>
+    <script>
+        function esFumador() {
+            let fumador = document.querySelector('#fumador');
+            let seleccion = document.querySelector('#cantidadCigarros');
+            seleccion.disabled = !fumador.checked;
+        }
+    </script>
+</body>
+</html>

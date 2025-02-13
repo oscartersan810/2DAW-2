@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 5c4</title>
+    <script>
+      function validaNumeroEntero(numero) {
+        let regex = /^[+-]?\d+$/;
+        return regex.test(numero);
+      }
+
+      // Testeo de la función
+      console.log(validaNumeroEntero("123")); // true
+      console.log(validaNumeroEntero("-25")); // true
+      console.log(validaNumeroEntero("+4882")); // true
+      console.log(validaNumeroEntero("3.14")); // false (número decimal)
+      console.log(validaNumeroEntero("abc")); // false (no es un número)
+    </script>
+  </head>
+  <body>
+    <h1>Actividad 5c4</h1>
+    <p>
+      Crea una función llamada validaNumeroEntero que valide si un string que
+      representa un número entero es correcto. Dicho número podrá estar
+      precedido opcionalmente por los caracteres + o - (por ejemplo se
+      consideran válidos: “123”, “-25”, “+4882”). Haz un testeo de la función.
+    </p>
+  </body>
+</html>

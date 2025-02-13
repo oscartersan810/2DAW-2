@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5c3</title>
+</head>
+<body>
+    <h1>Comprueba DNI</h1>
+    <form action="" method="get">
+        <label for="DNI">DNI: </label>
+        <input type="text" name="dni" id="dni">
+        <input type="button" value="Comprobar DNI" onclick="validaDNI()">
+    </form>
+    <div id="resultado">
+
+    </div>
+        
+    <script>
+        function validaDNI() {
+            let dni = document.getElementById('dni').value;
+            let resultado = document.getElementById('resultado');
+            let parrafo = document.createElement('p');
+            let patron = /^[0-9]{8}[T|R|W|A|G|M|Y|F|P|D|X|B|N|J|Z|S|Q|V|H|L|C|K|E]$/;
+
+            if (patron.test(dni)) {
+                parrafo.textContent = "¡DNI CORRECTO!";
+                resultado.appendChild(parrafo);
+
+            }else{
+                parrafo.textContent = "NO EXISTE EL DNI";
+                resultado.appendChild(parrafo);
+            }
+
+        }
+    </script>
+</body>
+</html>

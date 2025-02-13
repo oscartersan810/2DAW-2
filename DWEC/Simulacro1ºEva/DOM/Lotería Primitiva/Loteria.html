@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loteria Primitiva</title>
+    <style>
+        table {
+            font-size: 30px;
+            margin-top: 20px;
+        }
+
+        td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .ganadora {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Combinación Ganadora</h1>
+    <input type="button" value="Generar combinación" onclick="bonoloto()" /><br><br>
+    <table id="loteria"></table>
+
+    <script>
+        function generaTabla() {
+            let loteria = document.getElementById('loteria');
+            let contador = 1;
+
+            for (let i = 1; i <= 7; i++) {
+                let fila = document.createElement('tr');
+                for (let j = 1; j <= 7; j++) {
+                    let columna = document.createElement('td');
+                    columna.textContent = contador++;
+                    fila.appendChild(columna);
+                }
+
+                loteria.appendChild(fila);
+            }
+        }
+
+        function bonoloto() {
+            let tabla = document.querySelectorAll('#loteria td');
+            let ganadora = [];
+            let celdas = [];
+
+            // Almacenar los 6 números ganadores
+            while (ganadora.length < 6) {
+                let numero = Math.floor(Math.random() * 49) + 1;
+                if (!ganadora.includes(numero)) {
+                    ganadora.push(numero);
+                }
+            }
+
+            console.log("Numeros Ganadores: ", ganadora);
+
+            // Recorrer las celdas y pintar las ganadoras
+            tabla.forEach(celda => {
+                if (ganadora.includes(parseInt(celda.textContent))) {
+                    celda.classList.add("ganadora"); // Añadir clase para cambiar el estilo
+                    celdas.push(celda.textContent);
+                }
+            });
+
+            console.log("Celdas ganadoras: ", celdas);
+        }
+
+        generaTabla();
+    </script>
+  </body>
+</html>

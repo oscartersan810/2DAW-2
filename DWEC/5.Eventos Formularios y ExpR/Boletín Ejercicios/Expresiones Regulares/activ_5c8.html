@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5c8</title>
+</head>
+<body>
+    <h1>Validación de IP's</h1>
+    <p>Pulsa f12 para ver la consola de depuración</p>
+    
+    <script>
+        function validaDireccionIP(ip) {
+            let patron = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+            if (patron.test(ip)) {
+                return ip+ " es una ip correcta";
+
+            }else{
+                return ip+ " no es una ip correcta";
+            }
+        }
+
+        console.log(validaDireccionIP("192.168.8.22"));
+        console.log(validaDireccionIP("192.168.16.254"));
+        console.log(validaDireccionIP("256.22.87.21"));
+    </script>
+</body>
+</html>

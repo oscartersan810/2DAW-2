@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividad 5c1</title>
+  <script>
+    function validaCP(codigoPostal) {
+      let regex = /^\s*\d{5}\s*$/;
+      return regex.test(codigoPostal);
+    }
+
+    function extraeCPs(frase) {
+      let regex = /\b\d{5}\b/g;
+      return frase.match(regex) || [];
+    }
+
+    function sustituyeCPs(frase) {
+      let regex = /\b\d{5}\b/g;
+      return frase.replace(regex, 'C.P.');
+    }
+
+    
+    console.log(validaCP('12345')); // true
+    console.log(validaCP(' 54321 ')); // true
+    console.log(validaCP('1234')); // false
+    console.log(extraeCPs('El código postal es 12345 y otro es 54321.')); // ['12345', '54321']
+    console.log(sustituyeCPs('El código postal es 12345 y otro es 54321.')); // 'El código postal es C.P. y otro es C.P.'
+  </script>
+</head>
+<body>
+  <h1>Actividad 5c1</h1>
+  <p>Crea una función llamada validaCP que valide si un código postal es válido, retornando true en caso afirmativo. El código postal podrá tener opcionalmente espacios por delante o por detrás. Haz un testeo de la función.
+    Crea una función llamada extraeCPs que tenga como argumento de entrada una frase que contenga códigos postales. La función debe devolver un array con todos los códigos postales encontrados. Haz un testeo de la función.
+    Crea una función llamada sustituyeCPs que tenga como argumento de entrada una frase que contenga códigos postales. La función debe devolver la frase de entrada sustituyendo todos los códigos postales por la palabra C.P. Haz un testeo de la función.
+  </p>
+</body>
+</html>

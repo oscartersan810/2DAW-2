@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito LocalStorage</title>
+</head>
+<body>
+    <h1>Carrito usando LocalStorage</h1>
+    <p>Añade nuevos artículos al carrito</p>
+    <p>Cierra la ventana y vuelve a abrirla para comprobar el resultado</p>
+    <form action="" method="post">
+        <label for="Articulo">Artículo: </label>
+        <input type="text" name="articulo" id="articulo"><br><br>
+        <label for="Cantidad">Cantidad: </label>
+        <input type="number" name="cantidad" id="cantidad"><br><br>
+        <input type="button" value="Añadir" id="anadir">
+        <input type="button" value="Vaciar Carrito" id="vaciarCarro">
+    </form><br><br>
+
+    <table border="1" id="tablaArticulos">
+        <thead>
+            <tr>
+                <th>Artículo</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script type="text/javascript">
+        const articulos = [];
+
+        function iniciar() {
+            document.getElementById('anadir').addEventListener('click', anadir);
+            document.getElementById('vaciarCarro').addEventListener('click', vaciar);
+            tabla();
+        }
+
+        function anadir() {
+            let articulo = document.getElementById("articulo").value;
+            let cantidad = document.getElementById("cantidad").value;
+
+            articulos.push({articulo: articulo, cantidad: parseInt(cantidad)});
+
+            localStorage.articulos = (JSON.stringify(articulos));
+            // JSON.stringify(articulos);
+            tabla();
+        }
+
+        function tabla() {
+            let tabla = document.getElementById("tablaArticulos");
+            let tbody = tabla.getElementsByTagName("tbody")[0];
+            tbody.innerHTML = ""; 
+
+            for (let i = 0; i < articulos.length; i++) {
+                let fila = document.createElement("tr");
+
+                let articuloT = document.createElement("td");
+                articuloT.textContent = articulos[i].articulo;
+                fila.appendChild(articuloT);
+
+                let cantidadT = document.createElement("td");
+                cantidadT.textContent = articulos[i].cantidad;
+                fila.appendChild(cantidadT);
+
+                tbody.appendChild(fila);
+            }
+        }
+
+        function vaciar() {
+            localStorage.clear();
+            articulos.length = 0;
+            tabla();
+        }
+        // let articulos = [];
+        addEventListener('load', iniciar);
+    </script>
+
+
+</body>
+</html>

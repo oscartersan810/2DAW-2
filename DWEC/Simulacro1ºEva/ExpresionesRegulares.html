@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExpresionesRegulares</title>
+  </head>
+  <body>
+    <script>
+      let numeroTelefono = /^(\+\d{1,3})?(6|7)\d{8}$/;
+      let horas = /^([0-1]\d|2[0-3])/;
+      let minutos = 0;
+      let horaCompleta = /^(([0-1]\d|2[0-3]):([0-5]\d):([0-5]\d))$/;
+      let dni = /^[0-9]{8}[T|R|W|A|G|M|Y|F|P|D|X|B|N|J|Z|S|Q|V|H|L|C|K|E]$/;
+      let fecha = /^(\d{2}(\/|-)\d{2}\2\d{4})$/;
+      let direccionFisica = /^[0-9A-F]{2}(:|-)$/;
+      let mesAño = /^(0?[1-9]|1[0-2])/; //Mes del año
+      let dia = /^(0?[1-9]|[12][0-9]|3[01])$/;
+      let fechaCompleta =
+        /^(\d{2}(\/|-)\d{2}\2 \d{4}) (\d{2}(\/|-)\d{2}\2\d{4 })$/;
+      let correoElectronico =
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      let nombre = /^[a-zA-Z\s]+$/;
+      let apellidos = /^[a-zA-Z\s]+$/;
+      let url =
+        /^(https?|ftp):\/\/([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(:\d+)?(\/[^\s]*)?$/;
+      let contraseniaSegura =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+={}\[\]:;"'<>,.?/-]).{8,20}$/;
+      let numeroTelefonoI = /^\+(\d{1,3})\s?(\d{4,14})$/;
+      let numeroTarjetaCredito =
+        /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|6(?:011|5[0-9]{2})[0-9]{12}|3(?:0[0-5]|[68][0-9])[0-9]{11}|2131|1800|35\d{3})\d{11}$/;
+
+      let texto = "El número de teléfono es 123456789 y está registrado.";
+      let posicion = texto.search(/\d{9}/); // Busca una secuencia de 9 dígitos (número de teléfono)
+      console.log(posicion); // Valor devuelto: 23 (posición donde se encuentra el número)
+
+      let oracion = "El clima está soleado. El clima es perfecto.";
+      let nuevaOracion = oracion.replace(/clima/g, "tiempo"); // Reemplaza "clima" por "tiempo" en toda la cadena
+      console.log(nuevaOracion); // "El tiempo está soleado. El tiempo es perfecto."
+
+      let frase1 = "manzana, naranja; plátano manzana, pera";
+      let frutas = frase1.split(/[\s,;]+/); // Separa la frase por espacios, comas o punto y coma
+      console.log(frutas); // ["manzana", "naranja", "plátano", "manzana", "pera"]
+
+      let cadena = "1234 apple 5678 banana 91011 orange";
+      let numeros = cadena.match(/\d+/g); // Encuentra todas las secuencias de dígitos
+      console.log(numeros); // ["1234", "5678", "91011"]
+
+      let frase = "En el Ruiz Gijón se imparte 'DAW', 'SMR' y la 'ESO'";
+      let arrayMatch = frase.match(/'.+?'/g);
+
+      let regexp = /".+"/g; // Buscar comillas con cualquier cosa entre ellas
+      let str = 'a "bruja" y su "escoba" es uno';
+      console.log(str.match(regexp)); // Resultado: ["bruja" y su "escoba"]
+
+      let regexp2 = /".+?"/g; // Buscar comillas con cualquier cosa entre ellas, pero de forma perezosa
+      let str2 = 'a "bruja" y su "escoba" es uno';
+      console.log(str2.match(regexp2)); // Resultado: ["bruja", "escoba"]
+
+      // Expresión regular
+      let patron = /^([0-9]{1,2}º)\s([0-5][0-9]')\s([0-5][0-9]'')\s([NS])$/;
+
+      // Ejemplos de pruebas
+      let pruebas = [
+        "10º 30' 45'' N", // Válido
+        "99º 59' 59'' S", // Válido
+        "100º 30' 45'' N", // Inválido (grados fuera de rango)
+        "10º60'45'' N", // Inválido (minutos fuera de rango)
+        "10º 30' 60'' N", // Inválido (segundos fuera de rango)
+        "10º 30' 45'' E", // Inválido (hemisferio incorrecto)
+        "10 30' 45'' N", // Inválido (falta el símbolo º)
+        "10º 30'45'' N", // Inválido (falta el espacio entre minutos y segundos)
+        "9º 5' 8'' S", // Inválido (dígitos únicos no cumplen el formato)
+      ];
+
+      // Realizar las pruebas
+      pruebas.forEach((cadena) => {
+        console.log(`"${cadena}" => ${patron.test(cadena)}`);
+      });
+    </script>
+  </body>
+</html>

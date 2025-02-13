@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 5c5</title>
+    <script>
+      function validaNumeroDecimal(numero) {
+        let regex = /^[+-]?\d+(,\d+)?$/;
+        return regex.test(numero);
+      }
+
+      // Testeo de la función
+      console.log(validaNumeroDecimal("123")); // true
+      console.log(validaNumeroDecimal("-25,09")); // true
+      console.log(validaNumeroDecimal("+0,23")); // true
+      console.log(validaNumeroDecimal("3.14")); // false (punto como separador decimal)
+      console.log(validaNumeroDecimal("abcdef")); // false (no es un número)
+      console.log(validaNumeroDecimal("12,34,56")); // false (más de una coma)
+    </script>
+  </head>
+  <body>
+    <h1>Actividad 5c5</h1>
+    <p>
+      Crea una función llamada validaNumeroDecimal que valide si un string que
+      representa un número entero o decimal es correcto. Dicho número podrá
+      estar precedido opcionalmente por los caracteres + o - y se usará la coma
+      como separador decimal(por ejemplo se consideran válidos: “123”, “-25,09”,
+      “+0,23”). Haz un testeo de la función.
+    </p>
+  </body>
+</html>

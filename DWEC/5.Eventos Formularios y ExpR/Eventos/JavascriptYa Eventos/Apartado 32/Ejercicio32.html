@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 32</title>
+  </head>
+  <body>
+    <h1>Ejercicio 32</h1>
+    <table border="1">
+        <tr>
+            <td onmouseover="colorear(this, 'red')" onmouseout="colorear(this,'#ffffff')">
+                <a href="http://www.outlook.com">Outlook</a>
+            </td>
+            <td onmouseover="colorear(this, 'blue')" onmouseout="colorear(this,'#ffffff')">
+                <a href="http://www.yahoo.com">yahoo</a></td>
+            <td onmouseover="colorear(this, 'green')" onmouseout="colorear(this,'#ffffff')">
+                <a href="http://www.gmail.com">Gmail</a></td>
+        </tr>
+    </table>
+
+    <script>
+        function colorear(object, color) {
+            object.style.backgroundColor = color;
+        }
+    </script>
+  </body>
+</html>

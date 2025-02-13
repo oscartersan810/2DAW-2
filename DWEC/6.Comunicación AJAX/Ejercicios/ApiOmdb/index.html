@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsquedas de peliculas</title>
+    <script src="Peliculas.js"></script>
+</head>
+<body>
+    <h1>Búsqueda de Películas Disponibles</h1>
+    <form action="" method="get" id="formulario">
+        <label for="Titulo">Título:</label>
+        <input type="text" name="titulo" id="titulo"><br><br>
+        <label for="Año">Año:</label>
+        <input type="number" name="anio" id="anio"><br><br>
+        <label for="Tipo">Tipo:</label>
+        <select name="tipo" id="tipo"><br><br>
+            <option value="">Seleccionar...</option>
+            <option value="movie">Películas</option>
+            <option value="series">Series</option>
+            <option value="episode">Episodio</option>
+        </select>
+        <input type="button" value="Buscar" id="buscar">
+    </form><br><hr>
+    <div id="resultados"></div>
+</body>
+</html>

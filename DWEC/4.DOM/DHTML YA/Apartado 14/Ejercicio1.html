@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+  </head>
+  <body>
+    <h1>Ejercicio 1</h1>
+    <p>
+      Se debe crear una página que contenga un div con 5 párrafos. Al presionar
+      un botón insertar un nuevo párrafo al principio del div que contiene los 5
+      párrafos.
+    </p>
+    <div id="pfo">
+        <p id="p1">Este es el Párrafo 1</p>
+        <p id="p2">Este es el Párrafo 2</p>
+        <p id="p3">Este es el Párrafo 3</p>
+        <p id="p4">Este es el Párrafo 4</p>
+        <p id="p5">Este es el Párrafo 5</p>
+    </div>
+
+    <form>
+        <input type="button" value="Insertar Párrafo delante" onclick="nuevoParrafoD()">
+    </form>
+    <script>
+        function nuevoParrafoD() {
+            let elemento = document.createElement('p');
+            let texto = document.createTextNode("Primer párrafo");
+            elemento.appendChild(texto);
+
+            let p = document.getElementById('p1');
+            let pfo = document.getElementById('pfo');
+
+            pfo.insertBefore(elemento, p);
+
+        }
+    </script>
+  </body>
+</html>

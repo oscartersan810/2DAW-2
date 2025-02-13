@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activ 4.10</title>
+</head>
+<body>
+    <h1>Actividad 4.10</h1>
+    <div id="contenido">
+        <input type="button" onclick="anadirParrafo()" value="Añadir Párrafo">
+    </div>
+
+    <script>
+         let contador = 1;
+        function anadirParrafo() {
+            let miDiv = document.getElementById("contenido");
+            let parrafo = document.createElement("p");
+            parrafo.textContent = "Párrafo número "+contador;
+            contador++;
+            miDiv.appendChild(parrafo);
+        }
+    </script>
+</body>
+</html>

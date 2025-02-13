@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 A18 MJ</title>
+</head>
+<body>
+    <h1>Ejercicio 3</h1>
+    <p>Pulsa f12 para ver los resultados en la consola</p>
+
+    <script>
+        let numero = parseInt(prompt("Introduzca un numero"));
+        function contadorDigitos(numero) {
+            let digitos = 0;
+            if (numero>=0 && numero<10) {
+                digitos = 1;
+                console.log("Numero: "+numero);
+                console.log("El numero tiene "+digitos+ " digito/s");
+            } else if (numero>=10 && numero<100) {
+                digitos = 2;
+                console.log("Numero: "+numero);
+                console.log("El numero tiene "+digitos+ " digito/s");
+            } else if (numero>=100 && numero<1000) {
+                digitos = 3;
+                console.log("Numero: "+numero);
+                console.log("El numero tiene "+digitos+ " digito/s");
+            } else if (numero>=1000 && numero<10000) {
+                digitos = 4;
+                console.log("Numero: "+numero);
+                console.log("El numero tiene "+digitos+ " digito/s");
+            } else if (numero>=10000 && numero<100000) {
+                digitos = 5;
+                console.log("Numero: "+numero);
+                console.log("El numero tiene "+digitos+ " digito/s");
+            } else if (numero>=100000 && numero<1000000){
+                digitos = 6;
+                console.log("Numero: "+numero);
+                console.log("El numero tiene "+digitos+ " digito/s");
+            } else if (numero>=1000000 && numero<10000000) {
+                digitos = 7;
+                console.log("Numero: "+numero);
+                console.log("El numero tiene "+digitos+ " digito/s");
+            } else{
+                console.log("El numero tiene mas de 7 digito/s o numero negaivo");
+            }
+
+            return digitos;
+        }
+
+        contadorDigitos(numero);
+    </script>
+</body>
+</html>

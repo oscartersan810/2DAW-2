@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5c5</title>
+</head>
+<body>
+    <h1>Comprueba Numero Entero</h1>
+    <p>Pulsa f12 para ver la consola de depuración</p>
+    <script>
+        function validaNumeroDecimal(numero) {
+            let patron = /^[+-]?[0-9]+,[0-9]+$/;
+
+            if (patron.test(numero)) {
+                return numero+ " es número decimal";
+
+            }else{
+                return numero+ " no es número decimal";
+            }
+        }
+
+        console.log(validaNumeroDecimal("123"));
+        console.log(validaNumeroDecimal("-25,09"));
+        console.log(validaNumeroDecimal("+0,23"));
+        console.log(validaNumeroDecimal("a45f"));
+
+    </script>
+</body>
+</html>

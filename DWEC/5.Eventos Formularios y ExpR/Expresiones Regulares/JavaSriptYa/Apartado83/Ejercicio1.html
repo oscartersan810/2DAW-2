@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1>Ejercicio 1 A83</h1>
+
+    <form id="formulario">
+        <label for="numero">Número: </label>
+        <input type="number" id="texto" name="exto" placeholder="ej: Lunes" required><br><br>
+        <input type="button" value="Comprobar" onclick="iniciar()">
+    </form>
+    <p id="nota"></p>
+
+    <script>
+        function iniciar() {
+
+            let texto = document.querySelector("#texto").value;
+            let parrafo = document.querySelector("#nota");
+
+            let comprobarPatron = /[lunes|martes|miercoles|jueves|viernes|sabado|domingo]\s\d{1,2}$/;
+
+            if (comprobarPatron.test(texto)) {
+                parrafo.innerHTML = "PATRÓN CORRECTO!";
+            } else {
+                parrafo.innerHTML = "PATRON INCORRECTO!";
+            }
+        }
+
+        // Añadimos el evento al formulario para que funcione correctamente
+        document.querySelector("#formulario").addEventListener("load", iniciar);
+    </script>
+</body>
+</html>

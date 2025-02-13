@@ -1,0 +1,60 @@
+Controles HTML más habituales en los Formularios
+Los controles HTML de formularios más habituales son:
+
+Etiquetas: <label>
+Cuadros de texto: <input type="text">
+Botones de selección (radio buttons): <input type="radio" >
+Cuadro de texto para contraseñas: <input type="password">
+Casilla de verificación: <input type="checkbox">
+Listas deplegables (select): <select> <option> ....</option> </select>
+Área de texto: <textarea>
+Campos ocultos (hidden): <input type="hidden" >
+Botón submit: <input type="submit" >
+Botón reset: <input type="reset">
+
+Para rescatar el contenido de los controles de cuadro de texto y textarea usaremos la propiedad value. Por ejemplo, para rescatar el contenido de un input de tipo text:
+
+document.querySelector("#txtNombre").value
+
+Para saber si una casilla de verificación (input de tipo checkbox) está seleccionada usaremos la propiedad checked, que devuelve un valor booleano. Por ejemplo, para sabe si un checkbox con id chkFumador está marcado usamos:
+
+document.querySelector("#chkFumador").checked
+
+
+Nuevos controles introducidos con HTML5
+HTML5 ha introducido nuevos controles para usar en los formularios. 
+
+Cuadros de texto de tipo email (se valida que el formato sea correcto): <input type="email"> 
+Cuadros de texto de búsqueda: <input type="search">
+Cuadros de texto de url: <input type="url" >
+Cuadro de texto de teléfono: <input type="tel">
+Cuadros de texto para números: <input type="number" min="0" max="10" step="5">
+Control de tipo range: <input type="range" min=0" max="10" step="5">
+Control de tipo fecha: <input type="date">
+Control de tipo semana: <input type="week" >
+Control de tipo mes: <input type="month" >
+Control de tipo hora: <input type="time">
+Control de tipo fecha y hora: <input type="datetime-local" >
+Control de selección de color: <input type="color" >
+
+Todos estos controles son de tipo input, por lo que para rescatar el contenido habrá que usar la propiedad value del control. Todos ellos devuelve un dato de tipo string (incluído los controles de tipo númerico, fecha, semana, etc.). Por ejemplo, para rescatar el valor de un input de tipo date usamos:
+
+document.querySelector("#fechaNac").value
+
+
+Validación de Formularios
+Los nuevos controles HTML5 permiten, mediante el uso de atributos, validar cierto tipo de información sin necesidad de usar código JavaScript. Veamos algunas de esas validaciones: 
+
+Atributo required : hace que sea obligatorio rellenar el contenido del control 
+Atributos minlength y maxlength: permiten indicar el número mínimo y máximo de caracteres en el control de tipo input text
+Atributos min y max permiten indicar la fecha mínima y máxima en un control de tipo input date
+Atributo pattern: permiten usar una expresión regular para validar el contenido del control
+
+
+Existen validaciones más complejas para las cuales no nos servirá los mecanismo proporcionados por los controles HTML5 (atributos required, maxlength, pattern, etc.). Para este tipo de situaciones tendremos que escribir código JavaScript para hacer las comprobaciones. En función de que consideremos que se ha superado o no la validación, posteriormente usaremos el método setCustomValidity sobre el control de la siguiente manera:
+
+<control>.setCustomValidity("") : si consideramos que ha superado la validación
+<control>.setCustomValidity("<Algún texto indicando el error de validación>") : si consideramos que no ha superado la validación
+
+
+En el siguiente enlace podemos ver con un ejemplo práctico del uso de setCustomValidity para comprobar que en dos cuadros de texto el usuario ha introducido el mismo contenido.

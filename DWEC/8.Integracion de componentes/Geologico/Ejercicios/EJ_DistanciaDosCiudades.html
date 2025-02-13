@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distancia Dos Ciudades</title>
+</head>
+<body>
+    <h1>Cálculo de distancia de dos ciudades</h1>
+    <p>Pulsa f12 para ver la consola y la distancia entre dos ciudades</p>
+    <script>
+        // Distancia Sevilla:
+        // Latitud: 37.388959 N
+        // Longitud: 5.984570 W
+        // --------------------
+        // Distancia Italia:
+        // Latitud: 41.895412 N
+        // Longitud: 12.483258 E
+        // --------------------
+
+        function distance(lat1,lat2, lon1, lon2){
+
+        lon1 =  lon1 * Math.PI / 180;
+        lon2 = lon2 * Math.PI / 180;
+        lat1 = lat1 * Math.PI / 180;
+        lat2 = lat2 * Math.PI / 180;
+   
+
+        let dlon = lon2 - lon1; 
+        let dlat = lat2 - lat1;
+        let a = Math.pow(Math.sin(dlat / 2), 2)
+                 + Math.cos(lat1) * Math.cos(lat2)
+                 * Math.pow(Math.sin(dlon / 2),2);
+               
+        let c = 2 * Math.asin(Math.sqrt(a));
+
+        let r = 6371;
+
+        return(c * r);
+    }
+
+        //SEVILLA
+        let lat1 = 37.388959;
+        let lon1 = -5.984570;
+        //ROMA
+        let lat2 = 41.895412;
+        let lon2 = 12.483258;
+  
+        console.log("-----------------------------");
+        console.log("DISTANCIA ENTRE SEVILLA(ESPAÑA) Y ROMA(ITALIA)");
+        console.log("-----------------------------");
+        console.log("DISTANCIA: "+distance(lat1,lat2,lon1,lon2)+"KM");
+    </script>
+</body>
+</html>

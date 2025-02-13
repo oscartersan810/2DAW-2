@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Actividad 5a3</h1>
+    <p>
+      Crea una lista desplegable que contenga las localidades “Utrera”, “Los
+      Palacios” y “Dos Hermanas”. Cuando el usuario seleccione una localidad
+      debe mostrarse junto al control la localidad que ha seleccionado en el
+      desplegable.
+    </p>
+    <label for="localidades">Selecciona una localidad:</label>
+    <select id="localidades">
+      <option value="utrera">Utrera</option>
+      <option value="losPalacios">Los Palacios</option>
+      <option value="dosHermanas">Dos Hermanas</option>
+    </select>
+
+    <p id="localidadSeleccionada">Localidad seleccionada:</p>
+
+    <script>
+      // Obtener referencia a la lista desplegable y al párrafo
+      let localidadesDropdown = document.getElementById("localidades");
+      let localidadSeleccionadaParrafo = document.getElementById(
+        "localidadSeleccionada"
+      );
+
+      // Asignar el evento change a la lista desplegable
+      localidadesDropdown.addEventListener("change", function () {
+        // Obtener el valor seleccionado
+        let localidadSeleccionada = localidadesDropdown.value;
+
+        // Actualizar y mostrar la localidad seleccionada en el párrafo
+        localidadSeleccionadaParrafo.textContent =
+          "Localidad seleccionada: " + localidadSeleccionada;
+      });
+    </script>
+  </body>
+</html>

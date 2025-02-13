@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activ 4.17</title>
+</head>
+<body>
+    <h3>Color de Párrafos</h3>
+    <div id="parrafos">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum illo id
+          temporibus eligendi sapiente quasi dicta officiis sed tempora architecto
+          non ex, perferendis modi, neque nisi, ullam praesentium aut. Temporibus.
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores
+          similique impedit saepe omnis aperiam. Sed expedita maiores tempore
+          deleniti qui ipsum porro libero voluptatem quis iusto! Ipsam nobis quis
+          numquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam sapiente
+          sunt esse repudiandae fuga deserunt veniam dolores labore cum, corrupti
+          molestiae quia? Voluptas, quaerat aspernatur. Iusto asperiores placeat
+          voluptatibus tenetur!
+        </p>
+      </div>
+      <form action="" method="post">
+        <label for="seleccion">Seleccionar Color: </label>
+        <select name="color" id="color">
+            <option value="red">Rojo</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+        <input type="button" value="Color Fondo" onclick="colorLetra()">
+      </form>
+
+      <script>
+        function colorLetra() {
+            let div = document.getElementById("parrafos");
+            let seleccionar = document.getElementById("color").value;
+            let parrafos = div.children;
+
+            for (let i = 0; i < parrafos.length; i++) {
+                if (seleccionar == "red") {
+                    parrafos[i].style.color = "red";
+                }
+                
+                if (seleccionar == "green") {
+                    parrafos[i].style.color = "green";
+                }
+                
+                if (seleccionar == "blue") {
+                    parrafos[i].style.color = "blue";
+                }
+                
+            }
+        }
+      </script>
+</body>
+</html>

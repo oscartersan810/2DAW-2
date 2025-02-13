@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+  </head>
+  <body>
+    <h1>Ejercicio 1</h1>
+    <p>
+      Confeccionar una página que contenga una lista de tipo (ul) y no defina
+      marcas de tipo (li) inicialmente. Luego al presionar un botón agregar dos
+      marcas de tipo (li) con sus respectivos textos. Luego de presionar una vez
+      el botón no permitir agregar más elementos (li).
+    </p>
+    <ul id="lista"></ul>
+    <form>
+      <input type="button" value="Generar dos listas" onclick="generaLista()" />
+    </form>
+    <script>
+      function generaLista() {
+        let elemento = document.getElementById('lista');
+        let nLista1;
+        let nLista2;
+        let texto1;
+        let texto2;
+        
+          nLista1 = document.createElement('li');
+          texto1 = document.createTextNode('Nuevo elemento 1');
+          nLista1.appendChild(texto1);
+
+          nLista2 = document.createElement('li');
+          texto2 = document.createTextNode('Nuevo elemento 2');
+          nLista2.appendChild(texto2);
+
+          elemento.appendChild(nLista1);
+          elemento.appendChild(nLista2);
+        
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+  </head>
+  <body>
+    <h1>Ejercicio 1</h1>
+    <p>
+      Permitir cambiar el tamaño de la fuente de un párrafo. Para esto crear
+      tres botones (fuente pequeña (10), fuente mediana(13) y fuente grande(20))
+    </p>
+    <p id="parrafo">Esto es un párrafo, pulsa los botones para modificar el tamaño del párrafo</p>
+    <form>
+        <input type="button" value="Fuente Pequeña (10)" onclick="fuenteP()">
+        <input type="button" value="Fuente Mediana (13)" onclick="fuenteM()">
+        <input type="button" value="Fuente Grande (20)" onclick="fuenteG()">
+    </form>
+
+    <script>
+        function fuenteP() {
+            let fuente = document.getElementById('parrafo');
+            fuente.style.fontSize = '10px';
+        }
+
+        function fuenteM() {
+            let fuente = document.getElementById('parrafo');
+            fuente.style.fontSize = '13px';
+        }
+        function fuenteG() {
+            let fuente = document.getElementById('parrafo');
+            fuente.style.fontSize = '20px';
+        }
+    </script>
+  </body>
+</html>

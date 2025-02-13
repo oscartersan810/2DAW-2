@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cocteles</title>
+    <style>
+        body{
+            background-color: blueviolet;
+        }
+        .title{
+            background-color: rosybrown;
+            color: white;
+            font-size: 50px;
+            text-align: center;
+        }
+        .subtitle{
+            background-color: rosybrown;
+            color: white;
+            font-size: 30px;
+            text-align: center;
+        }
+        .lista{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+            gap: 10px;
+        }
+        a{
+            text-decoration: none;
+            border: 1px solid black;
+            background-color: rosybrown;
+            color: white;
+            font-size: 21px;
+            padding: 15px;
+        }
+        a:hover{
+            color: black;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Cócteles API</h1>
+    <h2 class="subtitle">Lista de Filtros</h2>
+    <div class="lista">
+        <a href="filtro/nombreCocktail.php">Por Nombre</a>
+        <a href="filtro/alcoholCocktail.php">Por Alcohol</a>
+        <a href="filtro/categoriaCocktail.php">Por Categoria</a>
+        <a href="filtro/vasoCocktail.php">Por Tipo Vaso</a>
+    </div>
+</body>
+</html>

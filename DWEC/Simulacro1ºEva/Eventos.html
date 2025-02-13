@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Eventos en JavaScript</title>
+    <style>
+        .resaltar {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejemplo de Eventos en JavaScript</h1>
+
+    <!-- Sección de formularios -->
+    <form id="formulario">
+        <label for="inputNombre">Nombre:</label>
+        <input type="text" id="inputNombre">
+        <br><br>
+
+        <label for="selectColor">Selecciona un color:</label>
+        <select id="selectColor">
+            <option value="rojo">Rojo</option>
+            <option value="verde">Verde</option>
+            <option value="azul">Azul</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <!-- Eventos en el mouse -->
+    <div id="divMouse" style="width: 200px; height: 100px; background-color: lightblue; text-align: center; line-height: 100px;">
+        Pasa el ratón por encima de mí
+    </div>
+
+    <!-- Eventos de foco -->
+    <input type="text" id="inputFoco" placeholder="Haz focus aquí">
+
+    <p id="eventoClic">Haz clic aquí</p>
+
+    <p id="eventosTeclado">Presiona una tecla aquí</p>
+
+    <p id="coordenadasMouse">Moviendo el ratón sobre el área...</p>
+
+    <script>
+        // 31. Eventos onFocus y onBlur
+        const inputFoco = document.getElementById('inputFoco');
+        inputFoco.addEventListener('focus', () => {
+            inputFoco.style.borderColor = 'green';
+            alert('Foco en el campo de texto');
+        });
+        inputFoco.addEventListener('blur', () => {
+            inputFoco.style.borderColor = '';
+            alert('Perdido el foco');
+        });
+
+        // 32. Eventos onMouseOver y onMouseOut
+        const divMouse = document.getElementById('divMouse');
+        divMouse.addEventListener('mouseover', () => {
+            divMouse.style.backgroundColor = 'yellow';
+        });
+        divMouse.addEventListener('mouseout', () => {
+            divMouse.style.backgroundColor = 'lightblue';
+        });
+
+        // 33. Evento onLoad
+        window.addEventListener('load', () => {
+            alert('La página ha sido completamente cargada');
+        });
+
+        // 62. Eventos: load y DOMContentLoaded
+        window.addEventListener('DOMContentLoaded', () => {
+            alert('El DOM está completamente cargado, pero puede que otros recursos aún no');
+        });
+
+        // 63. Eventos: click y dblclick
+        const eventoClic = document.getElementById('eventoClic');
+        eventoClic.addEventListener('click', () => {
+            eventoClic.textContent = '¡Se hizo clic!';
+        });
+        eventoClic.addEventListener('dblclick', () => {
+            eventoClic.textContent = '¡Se hizo doble clic!';
+        });
+
+        // 64. Eventos: mousedown y mouseup
+        divMouse.addEventListener('mousedown', () => {
+            divMouse.style.backgroundColor = 'red';
+        });
+        divMouse.addEventListener('mouseup', () => {
+            divMouse.style.backgroundColor = 'green';
+        });
+
+        // 65. Eventos: mouseover y mouseout (ya cubierto con divMouse)
+
+        // 66. Evento: mousemove
+        divMouse.addEventListener('mousemove', (event) => {
+            const coordenadas = document.getElementById('coordenadasMouse');
+            coordenadas.textContent = `Coordenadas del ratón: X: ${event.clientX}, Y: ${event.clientY}`;
+        });
+
+        // 67. Eventos: keydown, keyup y keypress
+        const eventosTeclado = document.getElementById('eventosTeclado');
+        eventosTeclado.addEventListener('keydown', (event) => {
+            console.log(`Tecla presionada (keydown): ${event.key}`);
+        });
+        eventosTeclado.addEventListener('keypress', (event) => {
+            console.log(`Tecla presionada (keypress): ${event.key}`);
+        });
+        eventosTeclado.addEventListener('keyup', (event) => {
+            console.log(`Tecla liberada (keyup): ${event.key}`);
+        });
+
+        // 68. Evento change
+        const selectColor = document.getElementById('selectColor');
+        selectColor.addEventListener('change', (event) => {
+            alert(`Seleccionaste el color: ${event.target.value}`);
+        });
+
+        // 69. Eventos: focus y blur (ya cubierto con inputFoco)
+
+        // 70. Parámetro del método asociado al addEventListener.
+        // En todos los anteriores eventos, el parámetro es el objeto "event", 
+        // que contiene información sobre el evento, como la tecla presionada, las coordenadas del ratón, etc.
+
+        // 71. Evento submit
+        const formulario = document.getElementById('formulario');
+        formulario.addEventListener('submit', (event) => {
+            event.preventDefault();  // Evita que el formulario se envíe realmente
+            alert('Formulario enviado (simulado)');
+        });
+
+    </script>
+</body>
+
+</html>

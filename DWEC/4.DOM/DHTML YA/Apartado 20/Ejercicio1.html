@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+    <div id="r1">
+        <p>Párrafo 1</p>
+        <p>Párrafo 2</p>
+        <p>Párrafo 3</p>
+    </div>
+    <input type="button" value="Mover todos los párrafos" onclick="moverParrafo()">
+    <div id="r2">
+    </div>
+    <script>
+        function moverParrafo() {
+            let p1 = document.getElementById('r1');
+            let p2 = document.getElementById('r2');
+            p2.appendChild(p1);
+        }
+    </script>
+</body>
+</html>

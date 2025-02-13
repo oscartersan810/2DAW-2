@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5a1</title>
+    <style>
+        #div1, #div2{
+            border: 1px solid black;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manejador eventos compartido (Ver consola depuración)</h1>
+    <form action="" method="get">
+        <input type="button" value="Botón 1" id="btn1">
+        <input type="button" value="Botón 2" id="btn2">
+    </form><br>
+    <p>Div 1</p>
+    <div id="div1">
+        <p>Hola</p>
+        <p>Hola</p>
+    </div>
+    <p>Div 2</p>
+    <div id="div2">
+        <p>Hola</p>
+        <p>Hola</p>
+    </div>
+
+    <script>
+        function iniciar() {
+            document.querySelector('#btn1').addEventListener('click', manejadorEventos);
+            document.querySelector('#btn2').addEventListener('click', manejadorEventos);
+            document.querySelector('#div1').addEventListener('mouseenter', manejadorEventos);
+            document.querySelector('#div2').addEventListener('mouseenter', manejadorEventos);
+        }
+        function manejadorEventos(ev) {
+            let control = ev.target;
+            let evento = ev.type;
+            alert(`Evento desencadenado por control ${control.id} y es de tipo ${evento}`);
+        }
+
+        addEventListener('load', iniciar);
+    </script>
+</body>
+</html>

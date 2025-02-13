@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 A18 MJ</title>
+</head>
+<body>
+    <h1>Ejercicio 2</h1>
+    <p>Pulsa f12 para ver los resultados de las funciones en la consola</p>
+    <script>
+        //Primera función del perimetro del cuadrado
+        let ladoCuadrado = parseFloat(prompt("Introduzca el lado del cuadrado"));
+
+        //Variables siguientes para la función del volumen del cilindro
+        let radioCilindro = parseFloat(prompt("Introduzca el radio del cilindro"));
+        let alturaCilindro = parseFloat(prompt("Introduzca la altura del Cilindro"));
+
+        //Función para calcular el perímetro del cuadrado
+        function perimetroCuadrado(lado) {
+            let perimetro = (lado * lado);
+            console.log("Perímetro Cuadrado: "+perimetro);
+            return perimetro;
+        }
+
+        //Función para calcular el volumen del cilindro
+        function volumenCilindro(radio, altura) {
+            let volumen = Math.PI * Math.pow(radio, 2) * altura;
+            console.log("Volumen Cilindro: "+volumen);
+            return volumen;
+        }
+
+        //Llamada de las funciones
+        perimetroCuadrado(ladoCuadrado);
+        volumenCilindro(radioCilindro, alturaCilindro);
+        
+    </script>
+</body>
+</html>

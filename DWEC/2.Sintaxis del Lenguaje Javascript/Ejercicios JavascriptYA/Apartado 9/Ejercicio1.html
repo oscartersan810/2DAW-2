@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 A9</title>
+</head>
+<body>
+    <h1>Ejercicio 1</h1>
+    <script>
+        let dia = parseInt(prompt("Introduzca el día (1-31)"));
+        let mes = parseInt(prompt("Introduzca el mes (1-12)"));
+        let anio = parseInt(prompt("Introduzca el año (cualquiera)"));
+
+        if ((dia>24 && dia<32) || (dia>0 && dia<7) || (mes==12 && mes==1)) {
+            document.write("La fecha introducida: "+dia+"/"+mes+"/"+anio);
+            document.write("<br>");
+            document.write("La Fecha SI pertenece a Navidad");
+        } else {
+            document.write("La fecha introducida: "+dia+"/"+mes+"/"+anio);
+            document.write("<br>");
+            document.write("La Fecha NO pertenece a Navidad");
+        }
+    </script>
+</body>
+</html>

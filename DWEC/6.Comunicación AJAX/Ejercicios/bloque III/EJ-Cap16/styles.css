@@ -1,0 +1,77 @@
+h1 {
+    text-align: left;
+}
+
+body {
+    position: relative;
+    text-align: center;
+}
+
+.placaimagen {
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.info {
+    background-color: red;
+    opacity: 0.3;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    z-index: 2;
+}
+
+/* Posiciones ajustadas */
+#parte1 {
+    top: 210px;
+    left: 140px;
+    width: 100px;
+    height: 290px;
+}
+
+#parte2 {
+    top: 110px;
+    left: 410px;
+    width: 410px;
+    height: 100px;
+}
+
+#parte3 {
+    top: 250px;
+    left: 305px;
+    width: 100px;
+    height: 300px;
+}
+
+#parte4 {
+    top: 390px;
+    left: 520px;
+    width: 200px;
+    height: 150px;
+}
+
+#parte5 {
+    top: 605px;
+    left: 400px;
+    width: 405px;
+    height: 80px;
+}
+
+#parte6{
+    top: 610px;
+    left: 250px;
+    width: 115px;
+    height: 120px;
+}
+
+/* tooltip */
+#divmensaje {
+    background-color: rgb(180, 180, 168);
+     position: absolute; 
+     visibility: hidden; 
+     padding: 5px;
+     width:250px;
+     z-index: 100;
+  }

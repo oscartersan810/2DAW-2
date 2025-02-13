@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5c2</title>
+</head>
+<body>
+    <h1>Comprueba Acento</h1>
+    <form action="" method="get">
+        <label for="palabra">Palabra: </label>
+        <input type="text" name="palabra" id="palabra">
+        <input type="button" value="Comprobar" onclick="terminaVocalAcentuada()">
+    </form>
+    <div id="resultado">
+
+    </div>
+        
+    <script>
+        function terminaVocalAcentuada() {
+            let palabra = document.getElementById('palabra').value;
+            let resultado = document.getElementById('resultado');
+            let parrafo = document.createElement('p');
+            let patron = /á|é|í|ó|ú|Á|É|Í|Ó|Ú$/;
+
+            if (patron.test(palabra)) {
+                parrafo.textContent = "¡Termina en Vocal acentuada!";
+                resultado.appendChild(parrafo);
+
+            }else{
+                parrafo.textContent = "No termina en Vocal acentuada";
+                resultado.appendChild(parrafo);
+            }
+
+        }
+    </script>
+</body>
+</html>

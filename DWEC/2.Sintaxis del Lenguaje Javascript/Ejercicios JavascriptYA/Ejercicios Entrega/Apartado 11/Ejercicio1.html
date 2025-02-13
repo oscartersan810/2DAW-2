@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1 A11 MJ</title>
+  </head>
+  <body>
+    <h1>Ejercicio 1</h1>
+    <p>Pulsa f12 para ver el resultado en la consola</p>
+
+    <script>
+      let palabra = prompt("Introduzca estas palabras para ver en inglés (casa, mesa, perro, gato) o estas palabras en francés (persona, galleta, rojo, noche)");
+
+      switch (palabra) {
+        case "casa":
+          console.log("House");
+          break;
+        case "mesa":
+          console.log("Table");
+          break;
+        case "perro":
+          console.log("Dog");
+          break;
+        case "gato":
+          console.log("Cat");
+          break;
+        case "persona":
+            console.log("Personne");
+            break;
+        case "galleta":
+            console.log("Biscuit");
+            break;
+        case "rojo":
+            console.log("Rouge");
+            break;
+        case "noche":
+            console.log("Soirée");
+            break;
+        default:
+          console.log("La palabra introducida no está en la lista");
+          break;
+      }
+    </script>
+  </body>
+</html>

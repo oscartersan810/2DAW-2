@@ -1,0 +1,22 @@
+Eventos
+Los eventos son acciones o sucesos que ocurren en el navegador y que el código JavaScript puede "escuchar" y responder de manera programada. Los eventos permiten a los desarrolladores agregar interactividad a las páginas web y responder a las acciones del usuario o a cambios en el entorno.
+
+Algunos ejemplos de eventos:
+
+click: Ocurre cuando el usuario hace clic en un elemento
+onchange: Ocurre cuando se produce un cambio en un control (p.e. que el usuario ha seleccionado un valor en un select)
+mouseover: Ocurre cuando el mouse pasa sobre un elemento
+mouseout: Ocurre cuando el mouse sale de un elemento.
+keydown: Ocurre cuando una tecla es presionada.
+keyup: Ocurre cuando una tecla es soltada.
+focus: Ocurre cuando un elemento (como un campo de entrada) obtiene el foco.
+blur: Ocurre cuando un elemento pierde el foco.
+resize: Ocurre cuando el tamaño de la ventana del navegador cambia.
+scroll: Ocurre cuando el usuario desplaza la ventana o un elemento con scroll.
+
+Las tres maneras de añadir eventos a los controles
+
+En el enlace de abajo se muestra un ejemplo que añade el evento onclick de las tres maneras posibles:
+Añadiendo un atributo onclick en el HTML  =>  <input type:"button" onclick="clickBoton()" value="Pulsame"/>
+Asignando un manejador de eventos (función) a la propiedad onclick de un objeto botón  => miBoton.onclick = clickBoton;
+Llamando al método addEventListener de un objeto botón y pasándole como parámetros el evento ('click') y el manejador de eventos => miBoton.addEventListener('click', clickBoton);

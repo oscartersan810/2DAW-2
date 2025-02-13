@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 A7 MJ</title>
+</head>
+<body>
+    <h1>Ejercicio 2</h1>
+    <script>
+        let cNotas = parseInt(prompt("Introduzca la cantidad de notas"));
+        let notas = 0;
+        let suma = 0;
+        let media = 0;
+
+        for (let i = 0; i < cNotas; i++) {
+            notas = parseFloat(prompt("Introduzca la nota "+(i+1)));
+            document.write("Nota "+(i+1)+ " = "+notas);
+            document.write("<br>");
+            suma+=notas;
+        }
+        media = (suma/cNotas);
+
+        document.write("Nota media: "+media);
+    </script>
+</body>
+</html>

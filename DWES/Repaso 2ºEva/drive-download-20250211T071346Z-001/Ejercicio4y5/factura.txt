@@ -1,0 +1,8 @@
+FACTURA DE COMPRA 
+
+CODIGO 	 DESCRIPCION 			 PRECIO 	 PRECIO CON IVA
+7	 barra para cortina 2m.		 22.33		 27.0193
+7	 barra para cortina 2m.		 22.33		 27.0193
+7	 barra para cortina 2m.		 22.33		 27.0193
+
+total a pagar iva incluido: 81.0579

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1>Ejercicio 1</h1>
+    <ol id="lista1">
+        <li>Opción A</li>
+        <li>Opción B</li>
+        <li>Opción C</li>
+        <li>Opción D</li>
+    </ol>
+    <input type="button" value="Agregar punto final" onclick="agregarPunto()">
+    <script>
+        function agregarPunto() {
+            let lista = document.getElementById('lista1');
+            let objeto = lista.firstElementChild;
+            while (objeto!=null) {
+                objeto.innerText = objeto.innerText + ".";
+                objeto = objeto.nextElementSibling;
+            }
+        }
+    </script>
+</body>
+</html>

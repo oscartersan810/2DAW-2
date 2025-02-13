@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo DOM</title>
+    <style>
+        .mi-estilo {
+            color: green;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor">
+        <h1>Mi título</h1>
+        <p>Este es un párrafo.</p>
+        <p>Otro párrafo con <span>contenido dentro de un span</span></p>
+    </div>
+
+    <!-- Botones para interactuar con el DOM -->
+    <button id="btnAgregar">Agregar texto</button>
+    <button id="btnEliminar">Eliminar texto</button>
+    <button id="btnAgregarElemento">Agregar Elemento</button>
+    <button id="btnInsertarAntes">Insertar Antes</button>
+    <button id="btnCambiarEstilo">Cambiar Estilo</button>
+    <button id="btnCrearInput">Crear Input</button>
+    <button id="btnAgregarAtributo">Agregar Atributo</button>
+    <button id="btnBorrarAtributo">Borrar Atributo</button>
+    <button id="btnObtenerAtributo">Obtener Atributo</button>
+    <button id="btnMoverYClonar">Mover y Clonar</button>
+    <button id="btnCambiarHTML">Cambiar HTML</button>
+    <button id="btnCambiarTexto">Cambiar Texto</button>
+
+    <script>
+        // 3. Accediendo a una marca HTML a través del DOM (getElementById)
+        const contenedor = document.getElementById('contenedor');
+
+        // 9. Accediendo a un conjunto de marcas HTML similares (getElementsByTagName)
+        const parrafos = document.getElementsByTagName('p');
+
+        // 10. Accediendo a un conjunto de marcas HTML similares a partir de un Nodo (getElementsByTagName)
+        const spanDentroDelP = contenedor.getElementsByTagName('span');
+
+        // 11. Agregar un nodo de texto (appendChild - createTextNode)
+        const btnAgregar = document.getElementById('btnAgregar');
+        btnAgregar.addEventListener('click', () => {
+            const textoNuevo = document.createTextNode('Texto agregado dinámicamente.');
+            contenedor.appendChild(textoNuevo);  // Agregar el texto al contenedor
+        });
+
+        // 13. Crear y agregar un nodo de tipo elemento (createElement - appendChild)
+        const btnAgregarElemento = document.getElementById('btnAgregarElemento');
+        btnAgregarElemento.addEventListener('click', () => {
+            const nuevoElemento = document.createElement('div');
+            nuevoElemento.textContent = 'Este es un nuevo div creado dinámicamente';
+            contenedor.appendChild(nuevoElemento);  // Agregar el nuevo div
+        });
+
+        // 14. Agregar un nodo de tipo elemento en medio (insertBefore - createElement)
+        const btnInsertarAntes = document.getElementById('btnInsertarAntes');
+        btnInsertarAntes.addEventListener('click', () => {
+            const divNuevo = document.createElement('div');
+            divNuevo.textContent = 'Nuevo div insertado antes del primer párrafo';
+            contenedor.insertBefore(divNuevo, parrafos[0]);  // Insertar antes del primer párrafo
+        });
+
+        // 15. Eliminar un nodo de tipo elemento (removeChild)
+        const btnEliminar = document.getElementById('btnEliminar');
+        btnEliminar.addEventListener('click', () => {
+            const primerParrafo = parrafos[0];
+            contenedor.removeChild(primerParrafo);  // Eliminar el primer párrafo
+        });
+
+        // 16. Crear un atributo y agregárselo a un nodo de tipo elemento (setAttribute)
+        const btnAgregarAtributo = document.getElementById('btnAgregarAtributo');
+        btnAgregarAtributo.addEventListener('click', () => {
+            const h1 = document.querySelector('h1');
+            h1.setAttribute('class', 'mi-estilo');  // Agregar una clase al <h1>
+        });
+
+        // 17. Borrar un atributo de un elemento (removeAttribute)
+        const btnBorrarAtributo = document.getElementById('btnBorrarAtributo');
+        btnBorrarAtributo.addEventListener('click', () => {
+            const h1 = document.querySelector('h1');
+            h1.removeAttribute('class');  // Eliminar el atributo 'class' del <h1>
+        });
+
+        // 18. Recuperar un atributo de un elemento (getAttribute)
+        const btnObtenerAtributo = document.getElementById('btnObtenerAtributo');
+        btnObtenerAtributo.addEventListener('click', () => {
+            const h1 = document.querySelector('h1');
+            alert(h1.getAttribute('class'));  // Obtener el atributo 'class' del <h1>
+        });
+
+        // 20. Mover un nodo de tipo elemento y clonación de nodos (cloneNode)
+        const btnMoverYClonar = document.getElementById('btnMoverYClonar');
+        btnMoverYClonar.addEventListener('click', () => {
+            const h1 = document.querySelector('h1');
+            const clonH1 = h1.cloneNode(true);  // Clonamos el <h1>
+            contenedor.appendChild(clonH1);  // Agregar el clon al final del contenedor
+        });
+
+        // 21. Propiedad innerHTML
+        const btnCambiarHTML = document.getElementById('btnCambiarHTML');
+        btnCambiarHTML.addEventListener('click', () => {
+            contenedor.innerHTML = '<h1>Nuevo contenido del contenedor</h1>';  // Cambiar el contenido del contenedor
+        });
+
+        // 22. Propiedad innerText
+        const btnCambiarTexto = document.getElementById('btnCambiarTexto');
+        btnCambiarTexto.addEventListener('click', () => {
+            const p = document.querySelector('p');
+            p.innerText = 'Este es el nuevo texto del párrafo';  // Cambiar solo el texto del primer párrafo
+        });
+
+        // 23. Accediendo al estilo de una marca HTML.
+        const btnCambiarEstilo = document.getElementById('btnCambiarEstilo');
+        btnCambiarEstilo.addEventListener('click', () => {
+            const p = document.querySelector('p');
+            p.style.color = 'red';  // Cambiar el color del texto del primer párrafo a rojo
+        });
+
+        // 24. Creación de controles de tipo input dinámicamente.
+        const btnCrearInput = document.getElementById('btnCrearInput');
+        btnCrearInput.addEventListener('click', () => {
+            const inputNuevo = document.createElement('input');
+            inputNuevo.type = 'text';
+            inputNuevo.placeholder = 'Escribe algo aquí';
+            contenedor.appendChild(inputNuevo);  // Agregar el input al contenedor
+        });
+    </script>
+</body>
+
+</html>

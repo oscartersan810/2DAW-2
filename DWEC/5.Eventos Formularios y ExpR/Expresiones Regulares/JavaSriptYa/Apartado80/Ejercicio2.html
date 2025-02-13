@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>Ejercicio 2 A80</h1>
+    <form id="formulario">
+        <label for="numero">Número: </label>
+        <input type="number" id="numero" name="numero" placeholder="Ej: 999,999" required><br><br>
+        <input type="button" value="Comprobar" onclick="iniciar()">
+    </form>
+    <p id="nota"></p>
+
+    <script>
+        function iniciar() {
+            let numero = document.querySelector("#numero").value;
+            let parrafo = document.querySelector("#nota");
+
+            let comprobarNumero = /^\([0-9]{1,3}\,[0-9]{1,3}\)$/;
+
+            if (comprobarNumero.test(numero)) {
+                parrafo.innerHTML = "EL NÚMERO ES VÁLIDO";
+            } else {
+                parrafo.innerHTML = "EL NÚMERO NO ES VÁLIDO";
+            }
+        }
+
+        // Añadimos el evento al formulario para que funcione correctamente
+        document.querySelector("#formulario").addEventListener("load", iniciar);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="boton1" value="Botón1">
+    <input type="button" id="boton2" value="Botón2">
+    <script>
+        function iniciar() {
+            // document.querySelector("#boton1").addEventListener('click', manejador1);
+            // document.querySelector("#boton2").addEventListener('click', manejador2);
+            document.querySelector("#boton1").addEventListener('click', manejadorCompartido);
+            document.querySelector("#boton2").addEventListener('click', manejadorCompartido);
+        }
+
+        function manejadorCompartido(ev) {
+            const control = ev.target.value; // ev.target contiene el elto que ha desencadenado el evento
+            const tipoEvento = ev.type; // ev.type contiene el tipo de evento que se ha producido
+            alert("Control: " + control + "\nTipo de evento: " + tipoEvento);
+            if (control.id == "boton1") {
+                alert("Ha pulsado el botón 1");
+            }
+            if (control.id == "boton2") {
+                alert("Ha pulsado el botón 2");
+            }
+            
+        }
+
+        function manejador1() {
+            alert("Manejador de botón 1");
+        }
+
+        function manejador2() {
+            alert("Manejador de botón 2")
+        }
+
+        addEventListener('load', iniciar);
+    </script>
+</body>
+</html>

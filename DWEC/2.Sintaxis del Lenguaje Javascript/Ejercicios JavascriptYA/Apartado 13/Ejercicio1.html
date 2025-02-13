@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 A13</title>
+</head>
+<body>
+    <h1>Ejercicio 1</h1>
+    <script>
+        let contadorNota = 0;
+        let notaAlumno = 0;
+        let contadorNotaAlta = 0;
+        let contadorNotaBaja = 0;
+
+        while (contadorNota<10) {
+            contadorNota++;
+            notaAlumno = parseInt(prompt("Introduzca la nota "+contadorNota));
+
+            if (notaAlumno>=7) {
+                contadorNotaAlta++;
+            } else {
+                contadorNotaBaja++;
+            }
+        }
+
+        document.write("Cantidad de notas: "+contadorNota);
+        document.write("<br>");
+        document.write("Notas Altas: "+contadorNotaAlta);
+        document.write("<br>");
+        document.write("Notas Bajas: "+contadorNotaBaja);
+    </script>
+</body>
+</html>

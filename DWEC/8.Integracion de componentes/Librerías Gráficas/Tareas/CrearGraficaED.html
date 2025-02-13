@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consolas vendidas 2024</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+        google.charts.setOnLoadCallback(drawBasic);
+
+        function drawBasic() {
+
+            const ventas = {
+                año: 2024, 
+                consolas: [
+                    {consola:"PlayStation2", venta: 160000000},
+                    {consola:"Nintendo DS", venta: 154020000},
+                    {consola:"Nintendo Switch", venta: 146040000},
+                    {consola:"GameBoy", venta: 118690000},
+                    {consola:"PlayStation4", venta: 117200000},
+                    {consola:"PlayStation", venta: 102400000},
+                    {consola:"Nintendo Wii", venta: 101630000},
+                    {consola:"PlayStation3", venta: 87400000},
+                    {consola:"Xbox 360", venta: 86000000},
+                    {consola:"GameBoy Advance", venta: 81510000},
+                    {consola:"PSP", venta: 80000000},
+                    {consola:"Nintendo 3DS", venta: 75940000},
+                    {consola:"PlayStation5", venta: 65400000},
+                    {consola:"Nintendo NES", venta: 61910000},
+                    {consola:"Xbox One", venta: 58000000},
+                    {consola:"Nintendo SNES", venta: 49100000},
+                    {consola:"Sega Mega Drive", venta: 39500000},
+                    {consola:"Nintendo 64", venta: 32930000},
+                    {consola:"Atari 2600", venta: 30000000},
+                    {consola:"Xbox Series X/S", venta: 28300000},
+                    {consola:"Xbox", venta: 24000000},
+                    {consola:"Nintendo GameCube", venta: 21740000}
+                ]
+            };
+
+            let dataArray = [
+                ["Consola", "Ventas"], 
+                ...ventas.consolas.map((c) => [c.consola, c.venta]), 
+            ];
+
+            var data = google.visualization.arrayToDataTable(dataArray);
+
+            var options = {
+            title: `Ventas de consolas (${ventas.año})`,
+            width: 1000,
+            height: 800,
+            legend: { position: "none" },
+            hAxis: { title: "Consola" },
+            vAxis: { title: "Ventas (en millones)" },
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center;">Consolas Mas Vendidas del 2024</h1>
+    <div id="chart_div"  style="width: 900px; height: 500px; margin: 0px auto;"></div>
+</body>
+</html>

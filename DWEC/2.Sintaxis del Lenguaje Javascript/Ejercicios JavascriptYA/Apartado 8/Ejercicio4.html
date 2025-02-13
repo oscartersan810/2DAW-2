@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4 A8</title>
+</head>
+<body>
+    <h1>Ejercicio 4: Test de capacitación</h1>
+    <script>
+        let nombre = prompt("Introduzca tu nombre");
+        let cantidadTotal = parseInt(prompt("¿Cuantas Preguntas realizastes?"));
+        let cantidadAciertas = parseInt(prompt("¿Cuantas preguntas has acertado?"));
+
+        let porcentaje = (cantidadTotal*cantidadAciertas) / 100;
+
+        if (porcentaje>=90) {
+            document.write("Cantidad total: "+cantidadTotal);
+            document.write("<br>");
+            document.write("Aciertos: "+cantidadAciertas);
+            document.write("<br>");
+            document.write("Porcentaje: "+porcentaje);
+            document.write("<br>");
+            document.write("TIENES EL NIVEL SUPERIOR");
+        } else if (porcentaje >=75 && porcentaje<90) {
+            document.write("Cantidad total: "+cantidadTotal);
+            document.write("<br>");
+            document.write("Aciertos: "+cantidadAciertas);
+            document.write("<br>");
+            document.write("Porcentaje: "+porcentaje);
+            document.write("<br>");
+            document.write("TIENES EL NIVEL MEDIO");
+        } else if (porcentaje >=50 && porcentaje<75) {
+            document.write("Cantidad total: "+cantidadTotal);
+            document.write("<br>");
+            document.write("Aciertos: "+cantidadAciertas);
+            document.write("<br>");
+            document.write("Porcentaje: "+porcentaje);
+            document.write("<br>");
+            document.write("TIENES EL NIVEL REGULAR");
+        } else {
+            document.write("Cantidad total: "+cantidadTotal);
+            document.write("<br>");
+            document.write("Aciertos: "+cantidadAciertas);
+            document.write("<br>");
+            document.write("Porcentaje: "+porcentaje);
+            document.write("<br>");
+            document.write("FUERA DE NIVEL");
+        }
+        
+
+        document.write("<br>");
+
+    </script>
+</body>
+</html>

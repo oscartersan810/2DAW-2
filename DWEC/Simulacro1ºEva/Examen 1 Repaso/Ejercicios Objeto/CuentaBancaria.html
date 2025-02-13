@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuenta Bancaria</title>
+  </head>
+  <body>
+    <h1>Cuenta Bancaria</h1>
+    <input
+      type="button"
+      value="Ejecutar Función"
+      onclick="mostrarInfoCuenta(cuenta)"
+    /><br />
+    <script>
+      // Definir la función auxiliar para mostrar información de una cuenta
+      function mostrarInfoCuenta(cuenta) {
+        document.write("Titular: " + cuenta.titular);
+        document.write(" ");
+        document.write("Saldo: " + cuenta.saldo);
+        document.write("<br>");
+      }
+
+      // Crear objetos literales para las cuentas
+      let cuenta1 = {
+        titular: "Javier",
+        saldo: 3000,
+        ingresar: function (cantidad) {
+          this.saldo += cantidad;
+        },
+        extraer: function (cantidad) {
+          this.saldo -= cantidad;
+        },
+        transferir: function (cuentaDestino, cantidad) {
+          this.extraer(cantidad);
+          cuentaDestino.ingresar(cantidad);
+        },
+      };
+
+      let cuenta2 = {
+        titular: "Rocío",
+        saldo: 5000,
+        ingresar: function (cantidad) {
+          this.saldo += cantidad;
+        },
+        extraer: function (cantidad) {
+          this.saldo -= cantidad;
+        },
+        transferir: function (cuentaDestino, cantidad) {
+          this.extraer(cantidad);
+          cuentaDestino.ingresar(cantidad);
+        },
+      };
+
+      // Realizar la transferencia
+      cuenta1.transferir(cuenta2, 500);
+
+      // Pruebas de transferencia
+      document.write(
+        "Saldo de cuenta1 después de transferencia: " + cuenta1.saldo
+      ); // Debería mostrar 2500
+      document.write(
+        "Saldo de cuenta2 después de transferencia: " + cuenta2.saldo
+      ); // Debería mostrar 5500
+
+      // Crear un array de cuentas
+      let cuentas = [
+        {
+          titular: "Carlos",
+          saldo: 10000,
+          toString: function () {
+            return `Titular: ${this.titular}, Saldo: ${this.saldo}`;
+          },
+        },
+        {
+          titular: "Lidia",
+          saldo: 12500,
+          toString: function () {
+            return `Titular: ${this.titular}, Saldo: ${this.saldo}`;
+          },
+        },
+        {
+          titular: "Alicia",
+          saldo: 8500,
+          toString: function () {
+            return `Titular: ${this.titular}, Saldo: ${this.saldo}`;
+          },
+        },
+        {
+          titular: "Felipe",
+          saldo: 9000,
+          toString: function () {
+            return `Titular: ${this.titular}, Saldo: ${this.saldo}`;
+          },
+        },
+      ];
+
+      // Mostrar información de las cuentas en el array
+      for (let cuenta of cuentas) {
+        document.write(cuenta.toString());
+        document.write("<br>");
+      }
+
+      // Ordenar el array de cuentas por saldo de menor a mayor
+      cuentas.sort((a, b) => a.saldo - b.saldo);
+
+      // Prueba de ordenamiento
+      let saldosOrdenados = cuentas.map((cuenta) => cuenta.saldo);
+      document.write("Saldos ordenados: " + saldosOrdenados); // Debería mostrar [8500, 9000, 10000, 12500]
+    </script>
+  </body>
+</html>

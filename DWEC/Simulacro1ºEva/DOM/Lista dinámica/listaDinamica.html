@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista Dinámica</title>
+  </head>
+  <body>
+    <h2>Lista dinámica</h2>
+
+    <ul id="lista"></ul>
+
+    <form action="" method="get">
+      <label for="nt">Nuevo Texto: </label>
+      <input type="text" id="nt" name="nt" /><br /><br />
+      <label for="Color">Color: </label>
+      <select name="color" id="color">
+        <option value="cyan">Cyan</option>
+        <option value="green">Verde</option>
+        <option value="red">Rojo</option>
+        <option value="blue">Azul</option></select
+      ><br /><br />
+      <label for="Tamaño">Tamaño: </label>
+      <select name="tamanio" id="tamanio">
+        <option value="12px">12</option>
+        <option value="14px">14</option>
+        <option value="16px">16</option>
+        <option value="20px">20</option>
+        <option value="24px">24</option></select
+      ><br /><br />
+      <input type="button" value="Añadir elto" onclick="textoPersonalizado()">
+      <input type="button" value="Ocultar" onclick="ocultar()">
+    </form>
+    <script>
+      function textoPersonalizado() {
+        let nombre = document.querySelector("nt").value;
+        let lista = document.querySelector("#lista");
+        let texto = document.createElement("li");
+
+        let color = document.querySelector("#color").value;
+        let tamanio = document.querySelector("#tamanio").value;
+
+        texto.style.color = color;
+        texto.style.fontSize = tamanio;
+
+        texto.textContent = nombre;
+        lista.appendChild(texto);
+      }
+
+      function ocultar() {
+        let lista = document.getElementById("lista");
+
+        lista.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

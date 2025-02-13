@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+  </head>
+  <body>
+    <h1>Ejercicio 1</h1>
+    <p>
+      Confeccionar una página que muestre dos div que contengan 3 párrafos cada
+      uno. Cuando se presione un botón ocultar todos los párrafos del segundo
+      div.
+    </p>
+
+    <div id="primerParrafo">
+        <p>Párrafo 1.1</p>
+        <p>Párrafo 1.2</p>
+        <p>Párrafo 1.3</p>
+    </div>
+    <div id="segundoParrafo">
+        <p>Párrafo 2.1</p>
+        <p>Párrafo 2.2</p>
+        <p>Párrafo 2.3</p>
+    </div>
+
+    <form>
+        <input type="button" value="Ocultar Segundo Párrafo" onclick="ocultarParrafo()">
+    </form>
+    <script>
+        function ocultarParrafo() {
+            let parrafo = document.getElementById('segundoParrafo');
+            parrafo.style.visibility = 'hidden';
+        }
+    </script>
+  </body>
+</html>

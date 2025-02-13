@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartado65</title>
+</head>
+<body>
+    <div style="width:200px;height:200px;background:#0000ff" id="recuadro1">
+    </div>
+
+    <script>
+        document.getElementById('recuadro1').addEventListener('mouseover', entrada);
+        document.getElementById('recuadro1').addEventListener('mouseout', salida);
+
+        function entrada() {
+            document.getElementById('recuadro1').style.borderRadius = '30px';
+        }
+
+        function salida() {
+            document.getElementById('recuadro1').style.borderRadius = '0px';
+        }
+    </script>
+</body>
+</html>

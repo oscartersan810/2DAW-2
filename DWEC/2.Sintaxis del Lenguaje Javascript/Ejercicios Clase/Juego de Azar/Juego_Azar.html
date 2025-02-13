@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Azar</title>
+</head>
+<body>
+    <h1>Juego de Azar</h1>
+    <h2>Pulsa F12 para ver el juego en la consola de depuración</h2>
+    <script>
+        let saldoActual = 50;
+        let lanzaDado;
+        let apuesta;
+        let dadoAleatorio;
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random()*max)+1;
+        }
+
+        while (saldoActual>0 || saldoActual<200) {
+            lanzaDado = parseInt(prompt("Lanzar un numero del 1 al 6"));
+            apuesta = parseInt(prompt("Dinero a apostar (tienes "+saldoActual+")"));
+
+            while (lanzaDado<1 || lanzaDado>6) {
+                alert("El dado no puede ser 0 o mayor a 6 ¡Lanza de nuevo!");
+                lanzaDado = parseInt(prompt("Lanzar un numero del 1 al 6"));
+            }
+
+            console.log("Dado lanzado: "+lanzaDado);
+
+            while (apuesta>saldoActual) {
+                alert("No tienes esa cantidad de dinero ¡Prueba a apostar menos del que tienes o todo tu saldo!");
+                apuesta = parseInt(prompt("Dinero a apostar (tienes "+saldoActual+")"));
+            }
+
+            console.log("Dinero Apostado: "+apuesta);
+
+            dadoAleatorio = getRandomInt(6);
+
+            alert ("Ha salido "+dadoAleatorio);
+            console.log ("Ha salido "+dadoAleatorio);
+
+            if (lanzaDado==dadoAleatorio) {
+                alert("Has acertado !!");
+                saldoActual = apuesta * 2;
+                console.log("");
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

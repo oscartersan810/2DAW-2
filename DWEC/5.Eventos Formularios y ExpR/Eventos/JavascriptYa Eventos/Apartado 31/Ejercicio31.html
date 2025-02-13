@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 31</title>
+  </head>
+  <body>
+    <h1>Ejercicio 31</h1>
+    <form action="">
+        Nombre de usuario:
+        <input type="text" id="usuario"><br>Clave: 
+        <input type="password" id="clave" onblur="comprobar(this)"><br>
+        <input type="submit" value="confirmar">
+    </form>
+
+    <script>
+        function comprobar(control) {
+            if(control.value.length < 7 || control.value.length > 20){
+                alert("Carácteres invalido tiene que ser entre 7 y 20");
+            }
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividad 5c2</title>
+  <script>
+    function terminaVocalAcentuada(palabra) {
+      let regex = /[áéíóúÁÉÍÓÚ]$/;
+      return regex.test(palabra);
+    }
+
+    // Testeo de la función
+    console.log(terminaVocalAcentuada('Café')); // true
+    console.log(terminaVocalAcentuada('lápiz')); // true
+    console.log(terminaVocalAcentuada('Computadora')); // false
+    console.log(terminaVocalAcentuada('Fácil')); // true
+  </script>
+</head>
+<body>
+  <h1>Actividad 5c2</h1>
+  <p>Crea una función llamada terminaVocalAcentuada que valide si una palabra termina en vocal acentuada, 
+    sin distinguir mayúsculas de minúsculas.  Haz un testeo de la función.
+</p>
+</body>
+</html>

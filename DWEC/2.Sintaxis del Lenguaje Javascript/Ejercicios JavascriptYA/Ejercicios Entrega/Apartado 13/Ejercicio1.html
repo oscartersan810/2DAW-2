@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 A13 MJ</title>
+</head>
+<body>
+    <h1>Ejercicio 1</h1>
+    <p>Pulsa f12 para ver el resultado en la consola</p>
+    <script>
+        let contadorNota = 0;
+        let notaAlumno = 0;
+        let contadorNotaAlta = 0;
+        let contadorNotaBaja = 0;
+
+        while (contadorNota<10) {
+            contadorNota++;
+            notaAlumno = parseFloat(prompt("Introduzca la nota "+contadorNota));
+
+            if (notaAlumno>=7) {
+                contadorNotaAlta++;
+            } else {
+                contadorNotaBaja++;
+            }
+        }
+
+        console.log("Cantidad de notas: "+contadorNota);
+        console.log("<br>");
+        console.log("Notas Altas: "+contadorNotaAlta);
+        console.log("<br>");
+        console.log("Notas Bajas: "+contadorNotaBaja);
+    </script>
+</body>
+</html>

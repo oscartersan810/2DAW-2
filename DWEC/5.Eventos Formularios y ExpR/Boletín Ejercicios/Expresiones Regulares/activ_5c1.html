@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5c1</title>
+</head>
+<body>
+    <h1>Comprueba Códigos Postales</h1>
+    <form action="" method="get">
+        <label for="Codigo Postal">Código Postal: </label>
+        <input type="text" name="codigoPostal" id="codigoPostal">
+        <input type="submit" value="Comprobar" onclick="validaCP()">
+    </form>
+
+    <script>
+        function validaCP() {
+            let codigoPostal = document.querySelector('#codigoPostal').value;
+            let patron = /^\s*[0-9]{5}\s*$/;
+            
+            if (patron.test(codigoPostal)) {
+                alert("¡Código Postal Correcto!");
+            } else {
+                alert("Código Postal Incorrecto");
+            }
+        }
+
+        
+        function extraeCPs(frase) {
+            let patron = /\b[0-9]{5}\b/g; 
+            let codigosPostales = frase.match(patron); 
+            return codigosPostales || []; 
+        }
+
+        
+        function sustituyeCPs(frase) {
+            let patron = /\b[0-9]{5}\b/g;
+            return frase.replace(patron, "C.P."); 
+        }
+
+        
+        let frasePrueba = "Los códigos postales son 41710, 41003 y 41006.";
+        console.log("Frase original:", frasePrueba);
+
+        
+        let codigos = extraeCPs(frasePrueba);
+        console.log("Códigos Postales encontrados:", codigos);
+
+        
+        let fraseModificada = sustituyeCPs(frasePrueba);
+        console.log("Frase con C.P. sustituidos:", fraseModificada);
+    </script>
+</body>
+</html>

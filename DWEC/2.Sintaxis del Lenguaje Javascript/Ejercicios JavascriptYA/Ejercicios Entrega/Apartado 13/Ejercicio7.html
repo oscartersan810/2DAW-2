@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7 A13 MJ</title>
+</head>
+<body>
+    <h1>Ejercicio 7</h1>
+    <p>Pulsa f12 para ver el resultado en la consola</p>
+
+    <script>
+        let contador = 0;
+        let valor;
+        let cpares = 0;
+        let cimpares = 0;
+        let dtres = 0; //Divisible entre 3
+        let ndtres = 0; //NO Divisible entre 3
+
+        while (contador<5) {
+            contador++;
+            valor = parseInt(prompt("Introduzca el valor "+contador));
+
+            //Divisible entre 2 (par o impar)
+            if (valor%2==0) {
+                cpares++;
+            } else{
+                cimpares++;
+            }
+            //Divisible entre tres
+            if (valor%3==0) {
+                dtres++;
+            } else {
+                ndtres++;
+            }
+        }
+
+        console.log("Numeros introducidos: "+contador);
+        console.log("Numeros pares: "+cpares);
+        console.log("Numeros impares: "+cimpares);
+        console.log("Numeros divisible entre 3: "+dtres);
+        console.log("Numeros NO divisible entre 3: "+ndtres);
+    </script>
+</body>
+</html>
