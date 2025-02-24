@@ -26,6 +26,8 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `comunidades_autonomas`
 --
+CREATE DATABASE IF NOT EXISTS `comunidades_ajax` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish2_ci;
+USE `comunidades_ajax`;
 
 CREATE TABLE `comunidades_autonomas` (
   `id` int(11) NOT NULL,

@@ -35,19 +35,13 @@ class Usuario {
 		return $usuarios;
 	}
 
-	public static function getUsuarioByNombre($nombre) {
-		$conexion = FotografiasDB::connectDB();
-		$seleccion = "SELECT * FROM usuarios WHERE nombre = :nombre";
-		$consulta = $conexion->prepare($seleccion);
-		$consulta->bindParam(':nombre', $nombre, PDO::PARAM_STR);
-		$consulta->execute();
-	
-		if ($registro = $consulta->fetchObject()) {
-			return new Usuario($registro->id, $registro->nombre);
-		}
-		return null; // Si no se encuentra, devolver null
-	}
-	
+	public static function getUsuarioById($id) {
+        $conexion = FotografiasDB::connectDB();
+        $seleccion = "SELECT * FROM usuarios WHERE id=$id";
+        $consulta = $conexion->query($seleccion);
+        $registro = $consulta->fetchObject();
+        return new Usuario($registro->id, $registro->nombre);
+    }
 	
 	public function getId(){
 		return $this->id;

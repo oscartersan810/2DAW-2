@@ -1,8 +1,6 @@
 <?php
 require_once 'FotografiasDB.php';
-require_once 'Usuario.php';
 require_once 'like.php';
-
 class Foto {
 	private $id;
 	private $imagen;
@@ -11,7 +9,7 @@ class Foto {
 	function __construct($id=0, $imagen="", $id_usuario=0) {
 		$this->id = $id;	
 		$this->imagen = $imagen;
-		$this->id_usuario = $id_usuario;
+		$this->id_usuario = $id_usuario;	
 	}
 
 	public function insert() {
@@ -39,28 +37,6 @@ class Foto {
 		}
 		return $fotos;
 	}
-
-	public static function getFotosByAutor() {
-		$conexion = FotografiasDB::connectDB();
-		$seleccion = "SELECT f.imagen, u.nombre as autor, 
-					  (SELECT COUNT(*) FROM likes l WHERE l.id_foto = f.id) as likes 
-					  FROM fotos f
-					  JOIN usuarios u ON f.id_usuario = u.id";
-		$consulta = $conexion->query($seleccion);
-		$publicaciones = [];
-		
-		// Recorrer los resultados de la consulta
-		while ($registro = $consulta->fetch(PDO::FETCH_ASSOC)) {
-			// Almacenar los datos en un array asociativo
-			$publicaciones[] = [
-				'imagen' => $registro['imagen'],
-				'autor' => $registro['autor'],
-				'likes' => $registro['likes']
-			];
-		}
-	
-		return $publicaciones;
-	}	
 		
 	public function getId(){
 		return $this->id;
@@ -83,5 +59,13 @@ class Foto {
 		$this->id_usuario = $id;
 		return $this;
 	}
+
+	public static function getFotoByImagen($imagen) {
+        $conexion = FotografiasDB::connectDB();
+        $seleccion = "SELECT * FROM fotos WHERE imagen='$imagen'";
+        $consulta = $conexion->query($seleccion);
+        $registro = $consulta->fetchObject();
+        return new Foto($registro->id, $registro->imagen, $registro->id_usuario);
+    }
 	
 }
